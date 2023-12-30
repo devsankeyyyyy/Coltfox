@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');
+
+@media (max-width: 700px) {
+    #fullscreen-menu {
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 100001;
+
+}
+
+
+#fullscreen-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    z-index: 999;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.vertical-div {
+    background-color: aqua;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 400px;
+    transition: transform 0.3s  infinite;
+}
+.navbar-open .background-component {
+    max-width: 900px;
+}
+.red {
+    background-color: #DB1F1E;
+}
+
+
+
+.yellow {
+    background-color: #F1CFAE;
+}
+
+
+
+.experience2 {
+    height: 100%;
+    width: 100%;
+    max-width: 750px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* outline:none; */
+}
+  
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    height: 102px;
+    z-index: 10;
+}
+
+.navbar>img {
+    width: 150px;
+    z-index: 100000;
+    padding-left: 24px;
+}
+
+.navbar>button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: var(--fontsize-s);
+    padding-right: 24px;
+    cursor: pointer;
+    /* padding-right: 80px; */
+}
+
