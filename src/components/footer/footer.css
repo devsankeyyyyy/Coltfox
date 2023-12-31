@@ -1,0 +1,26 @@
+.follow-us-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .follow-us-text {
+    font-size: 2xl;
+    color: #012033;
+    font-weight: bold;
+  }
+  
+  .social-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    width: 100%;
+  }
+  
+  .text-white {
+    color: white;
+  }
+  .social-icons p:hover{
+    border: 1px solid blue;
+  }
