@@ -1,4 +1,226 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F2F2F2; 
+    padding: 0 136px  0 136px;
+ 
+  }
+  .extended-content {
+    display: flex;
+    flex-direction: row;
+  }
+  .logo{
+    background:url("./greypaper.jpeg");
+    background-size: cover;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    position: relative;
+  }
+  
+  .logo.extended{
+    width: 290px;
+    height: 80px;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-img {
+    width: 45px; 
+    height: 55px;
+  }
+  .logo-img1 {
+    width: 25px; 
+    height: 35px;
+  }
+  .logo-img.extended{
+    margin-top: -15px;
+    width: 200px; 
+    height: 60px;
+    background: transparent;
+  
+  }
+  .menu-icon {
+    background:url("./greypaper.jpeg");
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  .menu-icon img {
+    width: 29px; 
+    height: 36px;
+    cursor: pointer;
+  }
+  @media screen and (max-width: 480px) {
+    .navbar {
+      width: 100%;
+      padding: 0 26px  0 26px;
+    }
+    .logo{
+      left: 26px;
+      height: 70px;
+      width: 70px;
+    }
+    .logo.extended{
+      width: 150px;
+      height: 70px;
+      border-radius: 45px;
+    }
+    .logo-img {
+      width: 30px; 
+      height: 45px;
+    }
+    .logo-img.extended{
+      width: 100px; 
+      height: 45px;
+    }
+    .menu-icon{
+      height: 70px;
+      width: 70px;
+    } 
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar {
+      width: 100%;
+      padding: 0px 30px 0px 30px;
+    }
+    .logo{
+      left: 26px;
+      height: 70px;
+      width: 70px;
+    }
+    .logo.extended{
+      width: 150px;
+      height: 70px;
+      border-radius: 45px;
+    }
+    .logo-img {
+      width: 30px; 
+      height: 45px;
+    }
+    .logo-img.extended{
+      width: 100px; 
+      height: 45px;
+    }
+    .menu-icon{
+      height: 70px;
+      width: 70px;
+    } 
+  }
+  
+  .container {
+  position: absolute;
+  top:0%;
+  left: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1000%;
+  }
+  
+  .circle1 {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  background-image:url("./greypaper.jpeg");
+  background-size: contain;
+  background-position: center;
+  border-radius: 100%;
+  animation-duration: 0.75s;
+  animation-delay: 2.5s;
+  rotate: 360deg;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  }
+  .grow {
+  z-index: 1500;
+  border-radius: 100%;
+  animation-name: grow;
+  }
+  
+  @keyframes grow {
+  0% {
+    width: 400vw;
+    height: 800vh;
+    border-radius: 100%;
+    z-index: 10000000;
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+  }
+  }
+  @media(max-width:1200px){
+  .grow {
+  border-radius: 100%;
+  z-index: 10000000;
+  animation-name: grow;
+  }
+  @keyframes grow {
+  0% {
+    width: 500vw;
+    height: 700vh;
+    border-radius: 80%;
+    z-index: 1000000000;
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+  }
+  }
+  }
+  @media(max-width:800px){
+  .grow {
+  border-radius: 100%;
+  z-index: 10000000;
+  animation-name: grow;
+  }
+  @keyframes grow {
+  0% {
+    width: 500vw;
+    height: 500vh;
+    border-radius: 80%;
+    z-index: 1000000000;
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+  }
+  }
+  
+  }
+  
+  @media(max-width:500px){
+  .grow {
+  border-radius: 100%;
+  z-index: 10000000;
+  animation-name: grow;
+  }
+  @keyframes grow {
+  0% {
+    width: 400vw;
+    height: 300vh;
+    border-radius: 80%;
+    z-index: 1000000000;
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+  }
+  }
+  }
+  
 
 @media (max-width: 700px) {
     #fullscreen-menu {
@@ -13,7 +235,7 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    background-color: transparent;
+    background-color: gray;
     border: none;
     color: white;
     font-size: 18px;
@@ -89,13 +311,22 @@
 }
 
 .navbar>button {
-    background-color: transparent;
+    background:url("./greypaper.jpeg");
     border: none;
     color: white;
     font-family: 'Open Sans', sans-serif;
     font-size: var(--fontsize-s);
-    padding-right: 24px;
+    padding: 30px;
     cursor: pointer;
     /* padding-right: 80px; */
 }
-
+.menuButton{
+    background:url("./greypaper.jpeg");
+    border: none;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: var(--fontsize-s);
+    padding: 26px;
+    cursor: pointer;
+    border-radius: 100%;
+}

@@ -1,14 +1,40 @@
-/* CursorAnimation.css */
+/* cursor.css */
 .cursor {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    pointer-events: none;
-    mix-blend-mode: difference;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    background-color: white; /* Set an initial contrasting color */
-    transition: background-color 0.3s ease-out;
-  }
-  
+  width: 20px;
+  height: 20px;
+  background-color: #FCAB64;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 10000;
+  pointer-events: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cursor.active {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 3px solid #FCAB64;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.cursor.over-page6-cont {
+  width: 100px;
+  height: 100px;
+  background-color: #df2323;
+  border-radius: 100%;
+  transition: width 0.5s ease, height 0.5s ease, background-color 0.5s ease;
+}
+.cursor.over-follow-us-container{
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}

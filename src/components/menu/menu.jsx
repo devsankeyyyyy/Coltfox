@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { FiX } from 'react-icons/fi';
 import * as THREE from 'three';
 import './menu.css';
+import { motion, useAnimation } from "framer-motion";
 const NavbarAndFullscreenMenu = () => {
     const handleMenuClick = () => {
         const fullscreenMenu = document.getElementById('fullscreen-menu');
@@ -872,16 +873,80 @@ const NavbarAndFullscreenMenu = () => {
             ];
         }
     }
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLogoExtended, setIsLogoExtended] = useState(false);
+  const [isLogo, setIsLogo] = useState(false);
+  const [slider, setslider] = useState(false);
+
+  const controls = useAnimation();
+
+  const handleClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+
+    if (isMenuOpen && isLogoExtended && isLogo) {
+      setIsLogoExtended(false);
+      controls.start({ scale: 1 });
+      setIsLogo(false);
+    }
+  };
+
+  const handleLogoClick = () => {
+    if (!isMenuOpen && !isLogo) {
+      setIsLogoExtended(!isLogoExtended);
+    }
+  };
+  const handleLogo = () => {
+    if (!isMenuOpen && !isLogoExtended) {
+      setIsLogo(!isLogo);
+      setslider(true);
+    }
+  };
+  const variants = {
+    hamburger: { rotate: 0, opacity: 1 },
+    cross: { rotate: 180, opacity: 1 },
+  };
 
     return (
         <div className="flex h-32">
             <nav className="navbar">
                 <Link to={'/'}>
-                    <img className="w-[150px] pl-6" src="/images/logo.png" alt="logo" />
-                </Link>
-                <button className="menuButton rotate-90 mr-5 font-black">
+                <div
+        className={`logo ${isLogo ? "" : ""} ${
+          isLogoExtended ? "extended " : ""
+        }`}
+        onClick={handleLogoClick}
+        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+      >
+        <motion.img
+          className={`logo-img ${isLogoExtended ? "extended" : ""}`}
+          src={isLogoExtended ? "./expandedlogo.png" : "./logo.png"}
+          alt="Company Logo"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+            delay: isLogoExtended ? 1.2 : 0,
+          }}
+        />
+        <div className="container">
+                <div className="circle1 grow"></div>
+              </div>
+              <div className="container">
+                <div className="circle1 shrink"></div>
+              </div>
+              <div className="container">
+                <div className="circle1 grow-to-bottom-right"></div>
+              </div>
+              <div className="container">
+                <div className="circle1 grow-shrink-to-upper-right"></div>
+              </div>
+      </div>
+                </Link>          
+                <div className="menuButton rotate-90 mr-5 font-black">
                     <FaBars className='text-red-400 text-3xl ' />
-                </button>
+                </div>
             </nav>
 
             <div id="fullscreen-menu">
@@ -949,11 +1014,11 @@ const NavbarAndFullscreenMenu = () => {
                 </div>
 
 
-                <button id="close-menu" className="custom-close-button">
-                    <div className="circle">
+                <div id="close-menu" className="custom-close-button">
+                    <div className="circle border hover:bg-black transition-all ease-in-out">
                         <FiX className="close-icon" />
                     </div>
-                </button>
+                </div>
                 <canvas className='experience2 w-3.5'></canvas>
             </div>
 
