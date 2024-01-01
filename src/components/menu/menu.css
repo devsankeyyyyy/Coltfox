@@ -12,7 +12,7 @@
     flex-direction: row;
   }
   .logo{
-    background:url("./greypaper.jpeg");
+    background:url("/greypaper.jpeg");
     background-size: cover;
     height: 80px;
     width: 80px;
@@ -46,7 +46,7 @@
   
   }
   .menu-icon {
-    background:url("./greypaper.jpeg");
+    background:url("/greypaper.jpeg");
     background-size: cover;
     height: 100px;
     width: 100px;
@@ -133,7 +133,7 @@
   position: absolute;
   width: 0px;
   height: 0px;
-  background-image:url("./greypaper.jpeg");
+  background-image:url("/greypaper.jpeg");
   background-size: contain;
   background-position: center;
   border-radius: 100%;
@@ -311,7 +311,7 @@
 }
 
 .navbar>button {
-    background:url("./greypaper.jpeg");
+    background:url("/greypaper.jpeg");
     border: none;
     color: white;
     font-family: 'Open Sans', sans-serif;
@@ -321,7 +321,7 @@
     /* padding-right: 80px; */
 }
 .menuButton{
-    background:url("./greypaper.jpeg");
+    background:url("/greypaper.jpeg");
     border: none;
     color: white;
     font-family: 'Open Sans', sans-serif;

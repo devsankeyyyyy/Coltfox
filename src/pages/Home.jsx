@@ -303,16 +303,16 @@ const Home = () => {
 
     switch (boxId) {
       case "acma":
-        page5Cont.style.backgroundImage = 'url("./acmaimg.png")';
+        page5Cont.style.backgroundImage = 'url("/acmaimg.png")';
         break;
       case "toolstation":
-        page5Cont.style.backgroundImage = 'url("./toolstationimg.png")';
+        page5Cont.style.backgroundImage = 'url("/toolstationimg.png")';
         break;
       case "solo":
-        page5Cont.style.backgroundImage = 'url("./soloimg.png")';
+        page5Cont.style.backgroundImage = 'url("/soloimg.png")';
         break;
       case "cedevita":
-        page5Cont.style.backgroundImage = 'url("./cedevitaimg.png")';
+        page5Cont.style.backgroundImage = 'url("/cedevitaimg.png")';
         break;
       default:
         page5Cont.style.backgroundImage = "none";
@@ -453,7 +453,7 @@ const Home = () => {
         <div
           className=""
           style={{
-            background: 'url("./greypaper.jpeg")',
+            background: 'url("/greypaper.jpeg")',
             height: "100vh",
             display: "flex",
             justifyContent: "center",
@@ -705,12 +705,12 @@ const Home = () => {
               (selectedBox === "acma"
                 ? "Automotive Component Manufacturers Association of India"
                 : selectedBox === "toolstation"
-                ? "Tool station launches latest catalog with deals and products"
-                : selectedBox === "solo"
-                ? "Solo Expenses – App promotion marketing campaign"
-                : selectedBox === "cedevita"
-                ? "Creating an intelligent and seamless experience for an NGO."
-                : "")}
+                  ? "Tool station launches latest catalog with deals and products"
+                  : selectedBox === "solo"
+                    ? "Solo Expenses – App promotion marketing campaign"
+                    : selectedBox === "cedevita"
+                      ? "Creating an intelligent and seamless experience for an NGO."
+                      : "")}
           </div>
           <button className="viewproj-btn">
             View Project
@@ -724,12 +724,12 @@ const Home = () => {
               (selectedBox === "acma"
                 ? "./line-design-red1.png"
                 : selectedBox === "toolstation"
-                ? "./line-design-red2.png"
-                : selectedBox === "solo"
-                ? "./line-design-red3.png"
-                : selectedBox === "cedevita"
-                ? "./line-design-red4.png"
-                : "./line-design-red.png")
+                  ? "./line-design-red2.png"
+                  : selectedBox === "solo"
+                    ? "./line-design-red3.png"
+                    : selectedBox === "cedevita"
+                      ? "./line-design-red4.png"
+                      : "./line-design-red.png")
             }
             style={{ position: "absolute", left: "95%", top: "50%" }}
           />
@@ -737,9 +737,8 @@ const Home = () => {
           <div className="box-cont">
             <content>
               <div
-                className={`box-brand ${
-                  selectedBox === "acma" ? "open-brand" : ""
-                }`}
+                className={`box-brand ${selectedBox === "acma" ? "open-brand" : ""
+                  }`}
                 onClick={() => handleBoxClick("acma")}
               >
                 ACMA.
@@ -764,9 +763,8 @@ const Home = () => {
             )}
             <content2>
               <div
-                className={`box-brand ${
-                  selectedBox === "toolstation" ? "open-brand" : ""
-                }`}
+                className={`box-brand ${selectedBox === "toolstation" ? "open-brand" : ""
+                  }`}
                 onClick={() => handleBoxClick("toolstation")}
               >
                 Toolstation.
@@ -790,9 +788,8 @@ const Home = () => {
             )}
             <content3>
               <div
-                className={`box-brand ${
-                  selectedBox === "solo" ? "open-brand" : ""
-                }`}
+                className={`box-brand ${selectedBox === "solo" ? "open-brand" : ""
+                  }`}
                 onClick={() => handleBoxClick("solo")}
               >
                 Solo.
@@ -816,9 +813,8 @@ const Home = () => {
             )}
             <content4>
               <div
-                className={`box-brand ${
-                  selectedBox === "cedevita" ? "open-brand" : ""
-                }`}
+                className={`box-brand ${selectedBox === "cedevita" ? "open-brand" : ""
+                  }`}
                 onClick={() => handleBoxClick("cedevita")}
               >
                 Cedevita.

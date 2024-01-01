@@ -93,7 +93,7 @@ body {
   padding-top: 30px;
   padding-bottom: 30px;
   height: 192px;
-  background: url("./yellowpaper.jpeg");
+  background: url("/yellowpaper.jpeg");
   background-size: cover;
   border-radius: 100px;
   font-family: "Poppins", sans-serif;
@@ -103,7 +103,7 @@ body {
   animation: fillInOut 10s linear infinite;
 }
 .head2-anm1 {
-  background: url("./yellowpaper.jpeg");
+  background: url("/yellowpaper.jpeg");
   background-size: cover;
   border-radius: 100%;
   margin-top: -100px;
@@ -869,7 +869,7 @@ button:hover::before {
 
 /*page4*/
 .page4-container {
-  background: url("./yellowpaper.jpeg");
+  background: url("/yellowpaper.jpeg");
   background-size: cover;
   min-height: 90vh;
   display: flex;
@@ -1174,7 +1174,7 @@ button:hover::before {
   margin-left: 220px;
   height: 900px;
   width: 1250px;
-  background-image: url("./acmaimg.png");
+  background-image: url("/acmaimg.png");
   background-size: cover;
   transition: all 1s ease-in-out !important;
 }
@@ -1183,19 +1183,19 @@ button:hover::before {
   transition: all 1s ease-in-out;
 }
 .page5-cont.acma {
-  background-image: url("./acmaimg.png");
+  background-image: url("/acmaimg.png");
 }
 
 .page5-cont.toolstation {
-  background-image: url("./toolstationimg.png");
+  background-image: url("/toolstationimg.png");
 }
 
 .page5-cont.solo {
-  background-image: url("./soloimg.png");
+  background-image: url("/soloimg.png");
 }
 
 .page5-cont.cedevita {
-  background-image: url("./cedevitaimg.png");
+  background-image: url("/cedevitaimg.png");
 }
 
 .page5-title {
@@ -1770,7 +1770,7 @@ button:hover::before {
 
 /*page7*/
 .page7-container {
-  background: url("./yellowpaper.jpeg");
+  background: url("/yellowpaper.jpeg");
   background-size: cover;
   min-height: 90vh;
   display: flex;
@@ -2081,7 +2081,7 @@ button:hover::before {
 
 /*page8*/
 .page8-container {
-  background: url("./greypaper.jpeg");
+  background: url("/greypaper.jpeg");
   background-size: cover;
   min-height: 70vh;
   display: flex;
@@ -2170,7 +2170,7 @@ button:hover::before {
   margin-right: 10px;
   padding-left: 25px;
   padding-right: 25px;
-  background: url("./yellowpaper.jpeg");
+  background: url("/yellowpaper.jpeg");
   background-size: cover;
   padding: 1rem;
   display: flex;
@@ -2184,7 +2184,7 @@ button:hover::before {
   padding-left: 25px;
   padding-right: 25px;
   height: 118px;
-  background: url("./yellowpaper.jpeg");
+  background: url("/yellowpaper.jpeg");
   background-size: cover;
   padding: 1rem;
   display: flex;
@@ -2279,7 +2279,7 @@ button:hover::before {
 
 /*page9*/
 .page9-container {
-  background: url("./greypaper.jpeg");
+  background: url("/greypaper.jpeg");
   background-size: cover;
   display: flex;
   flex-direction: row;
@@ -2468,7 +2468,7 @@ button:hover::before {
 
 /*page10*/
 .page10-container {
-  background: url("./greypaper.jpeg");
+  background: url("/greypaper.jpeg");
   background-size: cover;
   min-height: 90vh;
   display: flex;
