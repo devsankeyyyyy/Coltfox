@@ -23,6 +23,9 @@ import Privacypolicy from '../pages/privacy-policy.jsx';
 import Blog1 from '../pages/blog-inside1.jsx';
 import Faq from '../pages/faq.jsx';
 import Whowearemenu from '../pages/whoweare-menu.jsx';
+import Cookiepolicy from '../pages/cookie-policy.jsx';
+import Termsofservice from '../pages/terms-of-service.jsx';
+import Accessibility from '../pages/accessbility.jsx';
 
 const Routers = () => {
   return (
@@ -45,9 +48,13 @@ const Routers = () => {
       <Route path='/our-blogs' element={<Ourblogs/>}/>
       <Route path='/blog-1' element={<Blog1/>}/>
       <Route path='/whatwedo-menu' element={<Whatwedomenu/>}/>
-      <Route path='/privacy-policy' element={<Privacypolicy/>}/>
-      <Route path='/faq' element={<Faq/>}/>
       <Route path='/whoweare-menu' element={<Whowearemenu/>}/>
+      <Route path='/privacy-policy' element={<Privacypolicy/>}/>
+      <Route path='/cookie-policy' element={<Cookiepolicy/>}/>
+      <Route path='/terms-of-service' element={<Termsofservice/>}/>
+      <Route path='/accessibility' element={<Accessibility/>}/>
+      <Route path='/faq' element={<Faq/>}/>
+      
     </Routes>
   );
 };
