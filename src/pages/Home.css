@@ -22,6 +22,14 @@ body {
   margin-left: 260px;
   margin-top: auto;
 }
+@media screen and (max-width:480px) {
+  .page9-des .slick-dots{
+    width:max-content;
+    margin-left: 60px;
+    margin-top: auto;
+    
+  }
+}
 .ft-slick__dots--custom {
   height: 8px;
   width: 14px;
@@ -1050,10 +1058,10 @@ button:hover::before {
   .page4-left {
     width: 350px;
   }
-  .perf {
-    width: 300px;
-    display: inline-block;
-  }
+  /* .perf {
+    width: 350px;
+    display: flex;
+  } */
   .whatwedo-btn{
     margin-right: auto;
   }
@@ -1062,7 +1070,7 @@ button:hover::before {
   }
   .page4-title {
     margin-top: 20px;
-    font-size: 50px;
+    font-size: 56px;
   }
   .page4-des {
     margin-top: 10px;
@@ -1077,13 +1085,12 @@ button:hover::before {
     margin-bottom: 8px;
   }
   .innertitle {
-    margin-left: 20px;
     font-size: 28px;
     line-height: 30px;
   }
-  .page4-container .page4-arr {
+  /* .page4-container .page4-arr {
     margin-right: 80px;
-  }
+  } */
   .page4-right {
     margin-left: 0px;
     margin-top: 300px;
@@ -2322,7 +2329,7 @@ button:hover::before {
   
   color: #1f1f21;
   font-family: "Poppins", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   padding-left: 50px;
   font-size: 24px;
   line-height: 36px;
@@ -2378,13 +2385,6 @@ button:hover::before {
   }
 }
 
-@media screen and (max-width:480px) {
-  .page9-des .slick-dots{
-    width: auto;
-    margin-left: 60px;
-    margin-top: auto;
-  }
-}
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .page9-cont {

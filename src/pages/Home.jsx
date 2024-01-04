@@ -542,15 +542,15 @@ const BorderElements = section.querySelectorAll(".animationLogo");
 
       <div className="bg-[#f2f2f2] flex flex-col overflow-hidden">
   <NavbarAndFullscreenMenu />
-  <div className="flex flex-col px-10 pt-8 md:px-12 xl:px-44 lg:flex-row justify-between">
+  <div className="flex flex-col pb-2 px-10 pt-8 md:px-12 xl:px-44 lg:flex-row justify-between">
   <div>
     <h1 className="text-[#df2323] font-semibold text-4xl md:text-[3rem] lg:text-[4.5rem] mb-6 sm:mb-20 leading-tight">
       We help
     </h1>
-    <p className="animation mb-6 sm:mb-20">
+    {/* <p className="animation mb-6 sm:mb-20">
         <span className="head2-anm bg-[url('/yellowpaper.jpeg')] text-3xl md:text-[3rem] lg:text-[4.5rem] bg-cover rounded-full text-[#1f1f21] font-semibold leading-tight px-4 py-2 sm:px-8 sm:py-4"></span>
         <span className="typing-cursor"></span>
-      </p>
+    </p> */}
     <h1 className="text-[#df2323] font-semibold text-4xl md:text-[3rem] lg:text-[4.5rem] mb-6 sm:mb-20 leading-tight">
       by marketing
     </h1>
@@ -567,7 +567,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
 
 
 
-      <div className="page2-container px-4 lg:px-8 sm:py-6 md:py-8 lg:py-0 xl:py-0 2xl:py-0">
+      <div className="page2-container px-4 lg:px-8 py-0">
   <div className="page2-rect bg-white rounded-3xl shadow-md w-full px-4 sm:px-6 flex flex-col md:flex-row justify-between gap-4 md:gap-6 lg:gap-4 xl:gap-10 2xl:gap-12">
 
     <div className="page2-right ml-0 lg:mt-0 w-full md:w-1/2 px-2 sm:px-4 ">
@@ -661,45 +661,45 @@ const BorderElements = section.querySelectorAll(".animationLogo");
           <div className="page4-line" />
           <content5>
             <div
-              className="perf"
+              className="perf flex flex-row justify-between"
               onClick={() => handleServiceClick("Performance Marketing")}
             >
-              <div className="srno">01</div>
-              <div className="innertitle">Performance Marketing</div>
-              <FontAwesomeIcon className="page4-arr" icon={faArrowRight} />
+              <div className="srno ml-2 lg:ml-0 w-20 sm:w-20">01</div>
+              <div className="innertitle ml-2 sm:ml-10">Performance Marketing</div>
+              <FontAwesomeIcon className="page4-arr sm:pl-6 pl-0" icon={faArrowRight} />
             </div>
           </content5>
           <div className="page4-line" />
           <content6>
             <div
-              className="perf"
+              className="perf flex flex-row justify-evenly"
               onClick={() => handleServiceClick("Omni-channel Marketing")}
             >
-              <div className="srno">02</div>
-              <div className="innertitle">Omni - channel Marketing</div>
-              <FontAwesomeIcon className="page4-arr" icon={faArrowRight} />
+              <div className="srno w-20 sm:w-20">02</div>
+              <div className="innertitle ml-auto pl-4 sm:pl-0 sm:ml-10">Omni - channel Marketing</div>
+              <FontAwesomeIcon className="page4-arr sm:pl-6 pl-0" icon={faArrowRight} />
             </div>
           </content6>
           <div className="page4-line" />
           <content7>
             <div
-              className="perf"
+              className="perf flex flex-row justify-between"
               onClick={() => handleServiceClick("Lead Generation")}
             >
-              <div className="srno">03</div>
-              <div className="innertitle">Lead Generation</div>
-              <FontAwesomeIcon className="page4-arr" icon={faArrowRight} />
+              <div className="srno ml-0 lg:ml-0 w-20 sm:w-20">03</div>
+              <div className="innertitle pl-2 sm:pl-0 ml-auto sm:ml-10">Lead Generation</div>
+              <FontAwesomeIcon className="page4-arr sm:pl-6 pl-0" icon={faArrowRight} />
             </div>
           </content7>
           <div className="page4-line" />
           <content8>
             <div
-              className="perf"
+              className="perf flex flex-row justify-between"
               onClick={() => handleServiceClick("Content Marketing")}
             >
-              <div className="srno">04</div>
-              <div className="innertitle">Content Marketing</div>
-              <FontAwesomeIcon className="page4-arr" icon={faArrowRight} />
+              <div className="srno  w-20 sm:w-20">04</div>
+              <div className="innertitle ml-4 pl-2 sm:pl-0 sm:ml-10">Content Marketing</div>
+              <FontAwesomeIcon className="pl-0 sm:pl-6 page4-arr" icon={faArrowRight} />
             </div>
           </content8>
           <div className="page4-line" />
@@ -734,7 +734,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
               </div>
             )}
             {selectedService === "Omni-channel Marketing" && (
-              <div className="titldes">
+              <div className="titldes mt-4">
                 Your customers will be happier in the long term if they feel
                 they have several methods to reach your customer service and
                 sales teams. Or if they can purchase your product easily
@@ -742,7 +742,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
               </div>
             )}
             {selectedService === "Lead Generation" && (
-              <div className="titldes">
+              <div className="titldes mt-4">
                 {" "}
                 Lead Generation brings the right opportunities into your sales
                 teams’ calendars. We grow your pipeline by managing research,
@@ -752,7 +752,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
               </div>
             )}
             {selectedService === "Content Marketing" && (
-              <div className="titldes">
+              <div className="titldes mt-4">
                 Reach your marketing goals with a content strategy that helps
                 you find your strongest stories, reach the right people, measure
                 your success, and do it all as efficiently as possible.
@@ -829,7 +829,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
                   into new territories, and combining their event and Google
                   intelligent bidding to grow digital overall.
                 </div>
-                <div className="boxmid-s">
+                <div className="boxmid-s flex flex-col sm:flex-row w-fit">
                   <div className="whitebox">SMM</div>
                   <div className="whitebox">Content Writing</div>
                   <div className="whitebox">Strategy</div>
@@ -854,7 +854,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
                   with hard-to-reach local construction Landing strategy in
                   London and across the capital, making it easier attract deals.
                 </div>
-                <div className="boxmid-s">
+                <div className="boxmid-s flex flex-col sm:flex-row w-fit">
                   <div className="whitebox">Leads</div>
                   <div className="whitebox">Content</div>
                   <div className="whitebox">Marketing</div>
@@ -879,7 +879,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
                   exercitationem? Vel doloribus sint et porro aliquid ut nihil
                   quaerat aut enim nihil ea voluptatem sunt quo quod odit.
                 </div>
-                <div className="boxmid-s">
+                <div className="boxmid-s flex flex-col sm:flex-row w-fit">
                   <div className="whitebox">Leads</div>
                   <div className="whitebox">Content</div>
                   <div className="whitebox">Marketing</div>
@@ -904,7 +904,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
                   exercitationem? Vel doloribus sint et porro aliquid ut nihil
                   quaerat aut enim nihil ea voluptatem sunt quo quod odit.
                 </div>
-                <div className="boxmid-s">
+                <div className="boxmid-s flex flex-col sm:flex-row w-fit">
                   <div className="whitebox">Leads</div>
                   <div className="whitebox">Content</div>
                   <div className="whitebox">Marketing</div>
@@ -969,16 +969,18 @@ const BorderElements = section.querySelectorAll(".animationLogo");
             For over a <div className="endcont-style">decade</div>, we’ve been
             delivering ‘Marketing Experience’ that will amaze you
           </p>
-          <div className="end-date mt-6 text-sm">Since 2016</div>
+          <div className="end-date mt-6 text-xs sm:text-sm">Since 2016</div>
         </div>
       </div>
       
       {/*page7*/}
 
       <div className="bg-[url('/yellowpaper.jpeg')] bg-cover min-h-[90vh] flex flex-col items-start text-center p-4 md:p-10 lg:pl-20 lg:pb-36 overflow-hidden">
+    <Link to="/industries">
     <button className="mt-2 w-44 h-9 rounded-full bg-white flex items-center justify-center font-poppins font-medium text-black text-sm px-4 shadow hover:bg-orange-400">
         What We Focus
     </button>
+    </Link>
     <div className="mt-5 text-red-600 font-poppins font-bold text-4xl md:text-6xl lg:text-8xl">
         Industries
     </div>
@@ -1143,70 +1145,69 @@ const BorderElements = section.querySelectorAll(".animationLogo");
           <div className="page9-des w-1/2 pl-0 lg:w-2/3 gap-30">
             <Slider {...settings}>
               <div className="mr-auto lg:gap-30 flex flex-col w-1/2">
-                <div className="comp-name pl-[30px] lg:pl-[50px]">Roatan Real Estate</div>
+                <div className="comp-name pl-0 lg:pl-[50px]">Roatan Real Estate</div>
                 <div className="sign">“</div>
-                <div className="comp-review w-fit pl-[30px] lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
+                <div className="comp-review flex flex-col mt-16 sm:mt-8 w-fit pr-8 sm:pr-20 lg:pr-0 pl-0 lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
                   Coltfox is a much needed blessing and exceeded our
                   expectations in every way. They are honest, straightforward,
                   they take care of all your needs quickly, they are reliable,
                   you can count on them and most of all, they do everything they
-                  say they will do. - Marci Wiersma{" "}
+                  say they will do. - <strong>Marci Wiersma</strong>
                 </div>
               </div>
               <div className="mr-auto lg:gap-30 flex flex-col w-1/2">
-                <div className="comp-name pl-[30px] lg:pl-[50px]">Sterling Protective</div>
+                <div className="comp-name pl-0 lg:pl-[50px]">Sterling Protective</div>
                 <div className="sign">“</div>
-                <div className="comp-review w-fit pl-[30px] lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
+                <div className="comp-review flex flex-col mt-16 sm:mt-8 w-fit pr-8 sm:pr-20 lg:pr-0 pl-0 lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
                   We re-did our website twice in a 12 month period. There was no
                   comparison between the first company and Coltfox.
                   Professional, Creative, Attentive to Detail, Excellent
                   Communication…If I had contracted with Thrive the first time I
-                  would not have had to do it twice. - Mohan Das
+                  would not have had to do it twice. - <strong>Mohan Das</strong>
                 </div>
               </div>
               <div className="mr-auto lg:gap-30 flex flex-col w-1/2">
-                <div className="comp-name pl-[30px] lg:pl-[50px]">Gibbs Inc</div>
+                <div className="comp-name pl-0 lg:pl-[50px]">Gibbs Inc</div>
                 <div className="sign">“</div>
-                <div className="comp-review w-fit pl-[30px] lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
+                <div className="comp-review flex flex-col mt-16 sm:mt-8 w-fit pr-8 sm:pr-20 lg:pr-0 pl-0 lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
                   Coltfox has been instrumental in helping us build an
                   incredible lead generating machine through our AdWords and
                   remarketing campaigns. Working with Azrael is a pleasure; with
                   his guidance we have seen an increase in lead flow, tremendous
-                  efficiency and a very solid ROI.. - Vaneesa
+                  efficiency and a very solid ROI. - <strong>Vaneesa</strong>
                 </div>
               </div>
               <div className="mr-auto lg:gap-30 flex flex-col w-1/2">
-                <div className="comp-name pl-[30px] lg:pl-[50px]">JEF Techno</div>
+                <div className="comp-name pl-0 lg:pl-[50px]">JEF Techno</div>
                 <div className="sign">“</div>
-                <div className="comp-review w-fit pl-[30px] lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
+                <div className="comp-review flex flex-col mt-16 sm:mt-8 w-fit pr-8 sm:pr-20 lg:pr-0 pl-0 lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
                   Coltfox has been instrumental in providing excellence in
                   digital marketing. We are continuously impressed with their
                   level of service and consider them a key marketing partner in
                   helping drive our business. They are not only proactive and
-                  responsive, but also at the forefront marketing space - BG
-                  Prashanth
+                  responsive, but also at the forefront marketing space. - <strong>BG Prashanth</strong>
                 </div>
               </div>
               <div className="mr-auto lg:gap-30 flex flex-col w-1/2">
-                <div className="comp-name pl-[30px] lg:pl-[50px]">D-Capital Inc</div>
+                <div className="comp-name pl-0 lg:pl-[50px]">D-Capital Inc</div>
                 <div className="sign">“</div>
-                <div className="comp-review w-fit pl-[30px] lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
+                <div className="comp-review flex flex-col mt-16 sm:mt-8 w-fit pr-8 sm:pr-20 lg:pr-0 pl-0 lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
                   We enjoyed working with coltfox on our new website. The team
                   had lots of ideas to make the website look great, as well as
                   practical advice to ensure the site is both user-friendly and
                   SEO-friendly. Everyone is delighted with the end result. -
-                  Sindu Umadevan
+                  <strong>Sindu Umadevan</strong>
                 </div>
               </div>
               <div className="mr-auto lg:gap-30 flex flex-col w-1/2">
-                <div className="comp-name pl-[30px] lg:pl-[50px]">Lakshmi Corporation</div>
+                <div className="comp-name pl-0 lg:pl-[50px]">Lakshmi Corporation</div>
                 <div className="sign">“</div>
-                <div className="comp-review w-fit pl-[30px] lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
+                <div className="comp-review flex flex-col mt-16 sm:mt-8 w-fit pr-8 sm:pr-20 lg:pr-0 pl-0 lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
                   We have been working with Coltfox for several years and
                   continue to be impressed with their professionalism. We work
                   closely with the Coltfox team to meet our goals and
                   objectives, and each year we are able to generate 40% of our
-                  leads through Google.- Kishor Kumar Swamy
+                  leads through Google. - <strong>Kishor Kumar Swamy</strong>
                 </div>
               </div>
             </Slider>
