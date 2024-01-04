@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from 'react-router-dom';
 import "./Home.css";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/all";
@@ -341,27 +342,92 @@ const Home = () => {
   }, []);
   //page7
   const sectionRefs = useRef([]);
+ useEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  sectionRefs.current.forEach((section, index) => {
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".page7-container",
+        trigger: section,
         start: "top center",
         end: "bottom center",
         scrub: 1,
+        onEnter: () => {
+          const textElements = section.querySelectorAll(
+            ".section-title, .sec-des1, .sec-des2, .sec-des3, .learn-m"
+          );
+
+          // Add border to page7-line and animationLogo
+          const borderElements = section.querySelectorAll(".page7-divider, .animationLogo");
+          gsap.to(borderElements, { border: "2px solid #df2323" });
+          const AnimationElements = section.querySelectorAll(".animationLogo");
+          gsap.to(AnimationElements, { border: "3px solid #df2323",borderRadius:"200px",background:'' });
+          gsap.to(textElements, { opacity: 1 });
+
+          sectionRefs.current.forEach((otherSection, otherIndex) => {
+            if (otherIndex !== index) {
+              const otherTextElements = otherSection.querySelectorAll(
+                ".section-main, .sec-desc1, .sec-desc2, .sec-desc3, .learn-m"
+              );
+              gsap.to(otherTextElements, { opacity: 0 });
+
+              const otherBorderElements = otherSection.querySelectorAll(".page7-divider, .animationLogo");
+              gsap.to(otherBorderElements, { border: "2px solid transparent" });
+              const BorderElements = otherSection.querySelectorAll(".animationLogo");
+              gsap.to(BorderElements, { border: "2px solid white",background:'none',borderRadius:"200px" });
+            }
+          });
+        },
+        onLeaveBack: () => {
+          const textElements = section.querySelectorAll(
+            ".section-main, .sec-desc1, .sec-desc2, .sec-desc3, .learn-m"
+          );
+          const Elements = section.querySelectorAll(".animationLogo");
+          gsap.to(Elements, { border: "3px solid #df2323",borderRadius:"200px",background:'',ease:'power.in',duration:0.5 });
+
+          gsap.to(textElements, { opacity: 1 });
+          const borderElements = section.querySelectorAll(".page7-divider, .animationLogo");
+          gsap.to(borderElements, { border: "2px solid #df2323" });
+           const AnimationElements = section.querySelectorAll(".animationLogo");
+          gsap.to(AnimationElements, { border: "3px solid #df2323",borderRadius:"200px" });
+
+          sectionRefs.current.forEach((otherSection, otherIndex) => {
+            if (otherIndex !== index) {
+              const otherTextElements = otherSection.querySelectorAll(
+                ".section-main, .sec-desc1, .sec-desc2, .sec-desc3, .learn-m"
+              );
+              gsap.to(otherTextElements, { opacity: 0 });
+               const otherBorderElements = otherSection.querySelectorAll(".page7-divider, .animationLogo");
+              gsap.to(otherBorderElements, { border: "2px solid white" });
+               const BorderElements = otherSection.querySelectorAll(".animationLogo");
+              gsap.to(BorderElements, { border: "3px solid white",background:'none',borderRadius:"200px" });
+            }
+          });
+        },
+        onLeave: () => {
+          const textElements = section.querySelectorAll(
+            ".section-main, .sec-desc1, .sec-desc2, .sec-desc3, .learn-m"
+          );
+
+          gsap.to(textElements, { opacity: 1 });
+const BorderElements = section.querySelectorAll(".animationLogo");
+              gsap.to(BorderElements, { border: "3px solid #df2323",background:'',opacity:1,borderRadius:"200px" });
+          sectionRefs.current.forEach((otherSection, otherIndex) => {
+            if (otherIndex !== index) {
+              const otherTextElements = otherSection.querySelectorAll(
+                ".section-main, .sec-desc1, .sec-desc2, .sec-desc3, .learn-m"
+              );
+              gsap.to(otherTextElements, { opacity: 0 });
+               const BorderElements = otherSection.querySelectorAll(".animationLogo");
+              gsap.to(BorderElements, { border: "3px solid white",background:'none',opacity:1,borderRadius:"200px" });
+            }
+          });
+        },
       },
     });
+  });
+}, []);
 
-    sectionRefs.current.forEach((section, index) => {
-      tl.fromTo(
-        section,
-        { opacity: 0, y: 0 },
-        { opacity: 1, y: 0, duration: 1 },
-        `-=${index === 0 ? 0 : 0.5}`
-      );
-    });
-  }, []);
   useEffect(() => {
     const timeout = setTimeout(() => {
       gsap.to(".logo-container", {
@@ -473,83 +539,85 @@ const Home = () => {
           />
         </div>
       )}
-      <div className="main-container">
-        <NavbarAndFullscreenMenu />
-        <div className="page1-content">
-          <div className="head1 ">We help</div>
-          <p className="animation">
-            <span className="head2-anm"></span>
-            <span className="typing-cursor"></span>
-          </p>
 
-          <div className="head3">by marketing</div>
+      <div className="bg-[#f2f2f2] flex flex-col overflow-hidden">
+  <NavbarAndFullscreenMenu />
+  <div className="flex flex-col px-10 pt-8 md:px-12 xl:px-44 lg:flex-row justify-between">
+  <div>
+    <h1 className="text-[#df2323] font-semibold text-4xl md:text-[3rem] lg:text-[4.5rem] mb-6 sm:mb-20 leading-tight">
+      We help
+    </h1>
+    <p className="animation mb-6 sm:mb-20">
+        <span className="head2-anm bg-[url('/yellowpaper.jpeg')] text-3xl md:text-[3rem] lg:text-[4.5rem] bg-cover rounded-full text-[#1f1f21] font-semibold leading-tight px-4 py-2 sm:px-8 sm:py-4"></span>
+        <span className="typing-cursor"></span>
+      </p>
+    <h1 className="text-[#df2323] font-semibold text-4xl md:text-[3rem] lg:text-[4.5rem] mb-6 sm:mb-20 leading-tight">
+      by marketing
+    </h1>
+  </div>
+  <div className="flex flex-col justify-between mt-8 sm:mt-0 w-fit">
+      <button className="mt-auto mb-0 sm:mb-20 rounded-full bg-white border border-[#fcab64] flex items-center justify-center text-black text-base sm:text-lg md:text-xl px-4 py-1 gap-2 shadow-[4px_8px_19px_-3px_#fcab64] hover:bg-[#fcab64] hover:text-white transition duration-500">
+        Let's talk <img src="./arr-b.png" alt="Arrow" className="w-5 md:w-6" />
+      </button>
+  </div>
+  </div>
+</div>
 
-          <div className="pr-52">
-            <button className="talk-btn">
-              Let's talk <img src="./arr-b.png" alt="Arrow" />
+
+
+
+
+      <div className="page2-container px-4 lg:px-8 sm:py-6 md:py-8 lg:py-0 xl:py-0 2xl:py-0">
+  <div className="page2-rect bg-white rounded-3xl shadow-md w-full px-4 sm:px-6 flex flex-col md:flex-row justify-between gap-4 md:gap-6 lg:gap-4 xl:gap-10 2xl:gap-12">
+
+    <div className="page2-right ml-0 lg:mt-0 w-full md:w-1/2 px-2 sm:px-4 ">
+      <button className="weare w-1/2 sm:w-1/3 h-47px rounded-full bg-white flex items-center justify-center text-black text-16px px-18px gap-8 box-shadow-2px-4px sm:px-4 sm:py-2 md:text-base lg:text-lg xl:text-xl">
+        Who We Are
+      </button>
+      <div ref={titleRef} className="page2-title pt-10 text-[#df2323] font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 md:mb-8 lg:mb-10 xl:mb-12">
+        Our Brands
+      </div>
+      <div className="page2-description font-poppins text-[#1F1F21] font-normal text-base sm:text-lg md:text-xl leading-normal sm:leading-relaxed md:leading-loose">
+        Hudbil Private Limited is a reliable company, with multiple brands under one umbrella. We are here to enable you with top-notch digital solutions & products through a proven cost-saving model. This allows you to scale, optimize, expand, and enhance your business with an individual approach. This is our game style.
+      </div>
+    </div>
+    
+    <div className="comp-cards w-full md:w-1/2 flex flex-col justify-center items-center gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
+      <div className="brand flex flex-col gap-20">
+        {[0, 1, 2].map((index) => (
+          <div className=" comp-c bg-[#d9d3d3] rounded-100px mt-0 flex justify-center items-center flex-col px-0 py-0 w-1/2" key={index}>
+            <img
+              src={content[(currentIndex + index) % content.length].imgSrc}
+              alt=""
+              className="w-2/3 h-[20%]"
+            />
+            <p className="mt-4 font-poppins text-base sm:text-lg md:text-xl lg:text-2xl text-center">
+              {content[(currentIndex + index) % content.length].pContent}
+            </p>
+            <button className="learnmore  rounded-full bg-white flex items-center justify-center text-black text-16px gap-10px sm:mt-4 px-4 sm:px-6 sm:py-2">
+              Learn more
+              <FontAwesomeIcon icon={faArrowRight} className="text-black text-1.5rem ml-2" />
             </button>
+            <div className="comp-line-design mt-6">
+              <img
+                src={content[(currentIndex + index) % content.length].imge}
+                alt="line design"
+              />
+            </div>
           </div>
-        </div>
+        ))}
       </div>
-      {/*page2*/}
-      <div className="page2-container">
-        <div className="page2-rect">
-          <div className="page2-right">
-            <button className="weare">Who We Are</button>
-            <div ref={titleRef} className="page2-title">
-              Our Brands
-            </div>
-            <div className="page2-description">
-              Hudbil Private Limited is an reliable company, with multiple
-              brands under the one umbrella. We are here to enable you with
-              top-notch digital solutions & products through a proven
-              cost-saving model. This allows you to scale, optimize, expand, and
-              enhance your business. with an individual approach. This is our
-              game style.
-            </div>
-          </div>
-          <div className="comp-cards">
-            <div className="brand">
-              {[0, 1, 2].map((index) => (
-                <div className="comp-c" key={index}>
-                  <img
-                    src={
-                      content[(currentIndex + index) % content.length].imgSrc
-                    }
-                    alt=""
-                    style={{
-                      marginTop:
-                        index === 1 ? "25px" : index === 2 ? "150px" : "0",
-                    }}
-                  />
-                  <p>
-                    {content[(currentIndex + index) % content.length].pContent}
-                  </p>
-                  <button className="learnmore">
-                    Learn more
-                    <FontAwesomeIcon
-                      icon={faArrowRight}
-                      style={{ color: "#000000", fontSize: "1.5rem" }}
-                    />
-                  </button>
-                  <div className="comp-line-design">
-                    <img
-                      src={
-                        content[(currentIndex + index) % content.length].imge
-                      }
-                      alt="line design"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+
+  </div>
+</div>
+
+    
+
 
       {/*page3*/}
       <div className="page3-container">
-        <div className="pt-16">
+        <div className="pt-16 h-auto">
           <div className="bg-[#fcab64]">
             <div className="section-heading-content section-heading bg-[#fcab64]">
               Our passion lies in working closely with our clients to develop
@@ -558,34 +626,35 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="page3-right">
-          <button className="aboutus">About Us</button>
-          <div className="stable-des">
-            Coltfox is not your typical digital marketing agency. We’re a
-            strategic marketing firm that partners with clients to move their
-            business forward. We’re bold. We’re curious. We’re transparent.
-          </div>
-          <div className="movable-des">
-            <div className="movable" ref={movableRef}>
-              {contents[contentIndex]}
-            </div>
-          </div>
-          <div className="flex justify-center pt-8 me-20">
-            <img src={image[contentIndex]} alt="Line Design" />
-          </div>
-          <button className="findmore-btn">
+        <div className="mt-5 ml-4 lg:mr-20 lg:ml-80 xl:ml-auto page3-right lg:w-[45%]">
+  <button className="aboutus bg-white border border-black flex items-center mt-12 mb-7 font-poppins font-medium text-black text-base lg:text-lg px-4 py-2 rounded-full gap-2 hover:bg-orange-400 hover:text-white hover:shadow-lg transition duration-500 ease-in-out">
+   <Link to="/who">About Us</Link> 
+  </button>
+  <div className="stable-des mt-5 font-poppins text-base lg:text-lg pr-4 lg:pr-7 text-[#012033] mb-5 max-w-full lg:max-w-2xl leading-normal lg:leading-9">
+    Coltfox is not your typical digital marketing agency. We’re a strategic marketing firm that partners with clients to move their business forward. We’re bold. We’re curious. We’re transparent.
+  </div>
+  <div className="movable-des pr-4 lg:pr-7 inline-flex flex-col font-poppins text-[#012033] leading-normal lg:leading-9 text-base lg:text-lg font-normal max-w-full lg:max-w-2xl text-left pb-2.5">
+    <div ref={movableRef} className="movable h-auto lg:h-31.25 font-poppins text-base lg:text-lg text-[#012033] pr-4 lg:pr-10 mb-3.75 max-w-full lg:max-w-2xl">
+      {contents[contentIndex]}
+    </div>
+  </div>
+  <div className="flex justify-center pt-8 mr-8 lg:mx-auto">
+    <img src={image[contentIndex]} alt="Line Design" />
+  </div>
+  <button className="findmore-btn lg:mx-auto">
             Find out more
             <img src="./arr-b.png" className="page3-arr" alt="Arrow" />
           </button>
-        </div>
+</div>
+
       </div>
 
       {/*page4*/}
       <div className="page4-container">
-        <div className="page4-left">
-          <button className="whatwedo-btn">What We Do</button>
+        <div className="page4-left lg:ml-10">
+          <button className="whatwedo-btn"><Link to="/we-do">What We Do</Link></button>
           <div className="page4-title">Our Services</div>
-          <div className="page4-des">
+          <div className="page4-des lg:w-full">
             Creative solutions from strategy through omni- channels placements
             to engag, acquire, and transform brands for sustained growth.
           </div>
@@ -604,7 +673,7 @@ const Home = () => {
           <content6>
             <div
               className="perf"
-              onClick={() => handleServiceClick("Omni - channel Marketing")}
+              onClick={() => handleServiceClick("Omni-channel Marketing")}
             >
               <div className="srno">02</div>
               <div className="innertitle">Omni - channel Marketing</div>
@@ -647,14 +716,16 @@ const Home = () => {
             />
           </button>
         </div>
-        <div className="page4-right">
+        <div className="page4-right mt-4 lg:mt-24">
           <div className="changing-desof">
-            <div className="innertitl flex -gap-5 justify-start">
+            <div className="innertitl flex text-xl mb- lg:gap-4 ">
+            
               {selectedService}
-              <img src="./arr-w-learn.png" className="p-3" />
+              <Link to={`/${selectedService.toLowerCase().replace(/ /g, '-')}`}>
+              <img src="./arr-w-learn.png" alt="Learn more" className="w-full p-0 h-[100%]" /></Link>
             </div>
             {selectedService === "Performance Marketing" && (
-              <div className="titldes">
+              <div className="titldes mt-4">
                 ROIs are at the heart of performance marketing, as every action
                 can be tracked and measured against key performance indicators
                 (KPIs). Whether it be the number of clicks, page views or sales,
@@ -662,7 +733,7 @@ const Home = () => {
                 performance
               </div>
             )}
-            {selectedService === "Omni - channel Marketing" && (
+            {selectedService === "Omni-channel Marketing" && (
               <div className="titldes">
                 Your customers will be happier in the long term if they feel
                 they have several methods to reach your customer service and
@@ -692,15 +763,17 @@ const Home = () => {
         </div>
       </div>
       {/*page5*/}
-      <div className="page5-container">
-        <button className="seeall-btn">
+      <div className="page5-container px-4 lg:px-20 flex flex-col py-16 lg:py-24 overflow-hidden">
+        <Link to="/fox-impact">
+        <button className="seeall-btn mt-[-42px] mb-2.5 ml-auto flex">
           Case Studies <img src="./arr-w-learn.png" />
         </button>
-        <div className="page5-cont" ref={containerRef}>
+        </Link>
+        <div className="page5-cont mt-10 mb-10 lg:mb-0 w-full h-full" ref={containerRef}>
           <div className="page5-title">
             {selectedBox ? selectedBox.toUpperCase() + "." : ""}
           </div>
-          <div className="page5-des">
+          <div className="page5-des w-full">
             {selectedBox &&
               (selectedBox === "acma"
                 ? "Automotive Component Manufacturers Association of India"
@@ -712,12 +785,14 @@ const Home = () => {
                       ? "Creating an intelligent and seamless experience for an NGO."
                       : "")}
           </div>
-          <button className="viewproj-btn">
+          <Link to={`/${selectedBox.toLowerCase().replace(/ /g, '-')}`}>
+          <button className="viewproj-btn mt-[55%] mb-6 ml-[4%]">
             View Project
             <img src="./arr-w-learn.png" />
           </button>
+          </Link>
         </div>
-        <div className="page5-box">
+        <div className="page5-box mb-0 mt-auto lg:mt-80 pb-8">
           <img
             src={
               selectedBox &&
@@ -747,7 +822,7 @@ const Home = () => {
             </content>
             {selectedBox === "acma" && (
               <>
-                <div className="box-des">
+                <div className="box-des w-fit sm:w-[90%]">
                   Working closely with the ACMA team, Associations has
                   transformed the event b2b and b2c search strategy and
                   performance by restructuring search campaigns, rolling out
@@ -773,7 +848,7 @@ const Home = () => {
             </content2>
             {selectedBox === "toolstation" && (
               <>
-                <div className="box-des">
+                <div className="box-des w-fit sm:w-[90%]">
                   The catalog will be available in all 550+ Tool station stores
                   across the UK. To celebrate the launch, Coltfox did help them
                   with hard-to-reach local construction Landing strategy in
@@ -798,7 +873,7 @@ const Home = () => {
             </content3>
             {selectedBox === "solo" && (
               <>
-                <div className="box-des">
+                <div className="box-des w-fit sm:w-[90%]">
                   Lorem ipsum dolor sit amet. Qui cumque deleniti sed maxime
                   debitis aut neque cupiditate At voluptas autem qui officiis
                   exercitationem? Vel doloribus sint et porro aliquid ut nihil
@@ -823,7 +898,7 @@ const Home = () => {
             </content4>
             {selectedBox === "cedevita" && (
               <>
-                <div className="box-des">
+                <div className="box-des w-fit sm:w-[90%]">
                   Lorem ipsum dolor sit amet. Qui cumque deleniti sed maxime
                   debitis aut neque cupiditate At voluptas autem qui officiis
                   exercitationem? Vel doloribus sint et porro aliquid ut nihil
@@ -845,44 +920,44 @@ const Home = () => {
         <div className="page6-title" ref={containerRef3}>
           Process & Approach
         </div>
-        <div className="page6-cont">
-          <div className="protitle">
+        <div className="page6-cont mt-10 mx-auto flex flex-col items-center justify-around p-1 md:p-4 mb-8 lg:mb-24 overflow-hidden lg:flex-row">
+          <div className="protitle mx-2 lg:ml-10 flex items-center justify-center gap-0 lg:gap-7 text-xs md:text-xl lg:text-[54px]">
             1. <div className="innert">Requirements</div>
           </div>
-          <div className="prodes">
+          <div className="prodes flex items-center justify-center ml-0 px-1 lg:ml-14 my-2 lg:my-16 w-full text-xs lg:text-[20px] leading-tight lg:leading-normal">
             Our initial meeting or call will identify your objectives and
             decipher exactly how we can help. This involves some deep digging
             into your company, your competitors, your audience and, most
             importantly, what you want to achieve.
           </div>
         </div>
-        <div className="page6-cont">
-          <div className="protitle">
+        <div className="page6-cont mt-10 mx-auto flex flex-col items-center justify-around p-1 md:p-4 mb-8 lg:mb-24 overflow-hidden lg:flex-row">
+          <div className="protitle mx-2 lg:ml-10 flex items-center justify-center gap-0 lg:gap-7 text-xs md:text-xl lg:text-[54px]">
             2. <div className="innert">Strategy</div>
           </div>
-          <div className="prodes">
+          <div className="prodes flex items-center justify-center ml-0 px-1 lg:ml-14 my-2 lg:my-16 w-full text-xs lg:text-[20px] leading-tight lg:leading-normal">
             We begin to explore all the possible avenues your business could
             take and we develop a custom strategy to hit your business goals,
             underpinned by a strategic digital plan. This is the step where no
             idea is a bad idea; really anything goes!
           </div>
         </div>
-        <div className="page6-cont">
-          <div className="protitle">
+        <div className="page6-cont mt-10 mx-auto flex flex-col items-center justify-around p-1 md:p-4 mb-8 lg:mb-24 overflow-hidden lg:flex-row">
+          <div className="protitle mx-2 lg:ml-10 flex items-center justify-center gap-0 lg:gap-7 text-xs md:text-xl lg:text-[54px]">
             3. <div className="innert">Launch</div>
           </div>
-          <div className="prodes">
+          <div className="prodes flex items-center justify-center ml-0 px-1 lg:ml-14 my-2 lg:my-16 w-full text-xs lg:text-[20px] leading-tight lg:leading-normal">
             After refining the concept we execute the final solution, always in
             budget and always on time. We'll be on hand to closely monitor the
             launch and keep you updated We track the project or campaign to
             ensure the results match your objectives.
           </div>
         </div>
-        <div className="page6-cont">
-          <div className="protitle">
+        <div className="page6-cont mt-10 mx-auto flex flex-col items-center justify-around p-1 md:p-4 mb-8 lg:mb-24 overflow-hidden lg:flex-row">
+          <div className="protitle mx-2 lg:ml-10 flex items-center justify-center gap-0 lg:gap-7 text-xs md:text-xl lg:text-[54px]">
             4. <div className="innert">Enhance</div>
           </div>
-          <div className="prodes">
+          <div className="prodes flex items-center justify-center ml-0 px-1 lg:ml-14 my-2 lg:my-16 w-full text-xs lg:text-[20px] leading-tight lg:leading-normal">
             Here we refine and optimise the project or campaign to maximise ROI
             and highlight key successes to carry into future projects. We cycle
             through a series of continuous improvement sprints to maximise and
@@ -894,73 +969,76 @@ const Home = () => {
             For over a <div className="endcont-style">decade</div>, we’ve been
             delivering ‘Marketing Experience’ that will amaze you
           </p>
-          <div className="end-date">Since 2016</div>
+          <div className="end-date mt-6 text-sm">Since 2016</div>
         </div>
       </div>
+      
       {/*page7*/}
-      <div className="page7-container">
-        <button className="whatwefocus-btn">What We Focus</button>
-        <div className="page7-title">Industries</div>
-        <div className="page7-des">
-          Regardless of your operation’s size, collaboration toward a shared
-          goal leads to success.
+
+      <div className="bg-[url('/yellowpaper.jpeg')] bg-cover min-h-[90vh] flex flex-col items-start text-center p-4 md:p-10 lg:pl-20 lg:pb-36 overflow-hidden">
+    <button className="mt-2 w-44 h-9 rounded-full bg-white flex items-center justify-center font-poppins font-medium text-black text-sm px-4 shadow hover:bg-orange-400">
+        What We Focus
+    </button>
+    <div className="mt-5 text-red-600 font-poppins font-bold text-4xl md:text-6xl lg:text-8xl">
+        Industries
+    </div>
+    <div className="mt-5 text-left lg:w-[65%] text-white font-poppins font-medium text-md md:text-lg lg:text-2xl leading-normal md:leading-relaxed">
+        Regardless of your operation’s size, collaboration toward a shared goal leads to success.
+    </div>
+    <div className="flex flex-col mt-10 lg:w-full text-left relative gap-12">
+        {/* Section 1 */}
+        <div className="section1 lg:w-4/5" ref={(ref) => (sectionRefs.current[0] = ref)}>
+            <div className="section-main text-white font-poppins font-bold text-3xl md:text-4xl lg:text-5xl">
+                FRANCHISES
+            </div>
+            <div className="page7-divider w-3/5 h-px bg-gray-300 mt-4"></div>
+            <div className="sec-logo">
+                <img src="./sec1-logo.png" alt="Franchises" className="animationLogo w-60 h-60 md:w-80 md:h-80 absolute right-48 top-[40%]"/>
+            </div>
+            <div className="sec-desc1 lg:w-1/2 mt-2 text-white font-poppins font-normal text-base lg:text-lg leading-relaxed">
+                Not only do we increase B2B leads for franchisors, we also help home-town franchisees generate new customers and increase customer loyalty.
+            </div>
+            <button className="learn-m w-fit mt-5 h-10 border border-white rounded-full px-5 flex items-center justify-between gap-5">
+                Learn More <img src="./arr-w-learn.png" alt="Learn More" className="w-10" />
+            </button>
         </div>
-        <div className="page7-content">
-          <div
-            className="section1"
-            ref={(ref) => (sectionRefs.current[0] = ref)}
-          >
-            <div className="section-title">FRANCHISES</div>
-            <div className="page7-line" />
+        {/* Section 2 */}
+        <div className="section2 lg:pl-[40px]" ref={(ref) => (sectionRefs.current[1] = ref)}>
+            <div className="section-main text-white font-poppins font-bold text-3xl md:text-4xl lg:text-5xl">
+            NON-PROFITS
+            </div>
+            <div className="page7-divider w-3/5 h-px bg-gray-300 mt-2"></div>
             <div className="sec-logo">
-              <img src="./sec1-logo.png" alt="hell" />
+                <img src="./sec2-logo.png" alt="Franchises" className="animationLogo w-60 h-60 md:w-80 md:h-80 absolute right-44 top-[40%]"/>
             </div>
-            <div className="sec-des1">
-              Not only do we increase B2B leads for franchisors, we also help
-              home-town franchisees generate new customers and increase customer
-              loyalty.
+            <div className="sec-desc2 lg:w-1/2 mt-2 text-white font-poppins font-normal text-base lg:text-lg leading-relaxed">
+                Not only do we increase B2B leads for franchisors, we also help home-town franchisees generate new customers and increase customer loyalty.
             </div>
-            <button className="learn-m">
-              Learn More <img src="./arr-w-learn.png" alt="hello" />
+            <button className="learn-m w-fit mt-5 h-10 border border-white rounded-full px-5 flex items-center justify-between gap-5">
+                Learn More <img src="./arr-w-learn.png" alt="Learn More" className="w-10" />
             </button>
-          </div>
-          <div
-            className="section2"
-            ref={(ref) => (sectionRefs.current[1] = ref)}
-          >
-            <div className="section-title">NON-PROFITS</div>
-            <div className="page7-line" />
-            <div className="sec-logo">
-              <img src="./sec2-logo.png" alt="" />
-            </div>
-            <div className="sec-des2">
-              Empowering non-profit organizations to increase engagement,
-              loyalty, impact, and donations worldwide is our major focus.
-            </div>
-            <button className="learn-m">
-              Learn More <img src="./arr-w-learn.png" alt="hello" />
-            </button>
-          </div>
-          <div
-            className="section3"
-            ref={(ref) => (sectionRefs.current[2] = ref)}
-          >
-            <div className="section-title">E-COMMERCE</div>
-            <div className="page7-line" />
-            <div className="sec-logo">
-              <img src="./sec3-logo.png" alt="" />
-            </div>
-            <div className="sec-des3">
-              We boost online retailers' digital presence, optimize conversion
-              rates, and enhance the customer shopping experience for increased
-              sales and profitability.
-            </div>
-            <button className="learn-m">
-              Learn More <img src="./arr-w-learn.png" alt="hello" />
-            </button>
-          </div>
         </div>
-      </div>
+        {/* Section 3 */}
+        <div className="section3 lg:w-4/5" ref={(ref) => (sectionRefs.current[2] = ref)}>
+            <div className="section-main text-white font-poppins font-bold text-3xl md:text-4xl lg:text-5xl">
+                E-COMMERCE
+            </div>
+            <div className="page7-divider w-3/5 h-px bg-gray-300 mt-2"></div>
+            <div className="sec-logo">
+                <img src="./sec3-logo.png" alt="Franchises" className=" animationLogo w-60 h-60 md:w-80 md:h-80 absolute right-48 top-[40%]"/>
+            </div>
+            <div className="sec-desc3 lg:w-1/2 mt-2 text-white font-poppins font-normal text-base lg:text-lg leading-relaxed">
+                Not only do we increase B2B leads for franchisors, we also help home-town franchisees generate new customers and increase customer loyalty.
+            </div>
+            <button className="learn-m w-fit mt-5 h-10 border border-white rounded-full px-5 flex items-center justify-between gap-5">
+                Learn More <img src="./arr-w-learn.png" alt="Learn More" className="w-10" />
+            </button>
+        </div>
+
+    </div>
+</div>
+
+
       {/*page8*/}
       <div className="page8-container">
         <button className="whattheysay-btn">What They Say</button>
@@ -976,51 +1054,52 @@ const Home = () => {
         <div className="page8-scroller1">
           <div className="scroll1-grp1">
             <div className="elem1">
-              <img src="./kf_logo.png" alt="kf_logo logo" />
+              <img src="./logo-1.png" alt="kf_logo logo" />
             </div>
             <div className="elem1">
-              <img src="./junk_logo.png" alt="junk_logo logo" />
+              <img src="./logo-2.png" alt="junk_logo logo" />
             </div>
             <div className="elem1">
-              <img src="./sendl_logo.png" alt="sendl_logo logo" />
+              <img src="./logo-3.png" alt="sendl_logo logo" />
             </div>
             <div className="elem1">
-              <img src="./sbee_logo.png" alt="sbee_logo logo" />
+              <img src="./logo-4.png" alt="sbee_logo logo" />
             </div>
             <div className="elem1">
-              <img src="./cre_logo.png" alt="cre_logo logo" />
+              <img src="./logo-5.png" alt="cre_logo logo" />
             </div>
             <div className="elem1">
-              <img src="./mfr_logo.png" alt="mfr_logo logo" />
+              <img src="./logo-6.png" alt="mfr_logo logo" />
             </div>
             <div className="elem1">
-              <img src="./usaid_logo.png" alt="usaid_logo logo" />
+              <img src="./logo-7.png" alt="usaid_logo logo" />
             </div>
           </div>
           <div className="scroll1-grp1">
             <div className="elem1">
-              <img src="./kf_logo.png" alt="kf_logo logo" />
+              <img src="./logo-1.png" alt="kf_logo logo" />
             </div>
             <div className="elem1">
-              <img src="./junk_logo.png" alt="junk_logo logo" />
+              <img src="./logo-2.png" alt="junk_logo logo" />
             </div>
             <div className="elem1">
-              <img src="./sendl_logo.png" alt="sendl_logo logo" />
+              <img src="./logo-3.png" alt="sendl_logo logo" />
             </div>
             <div className="elem1">
-              <img src="./sbee_logo.png" alt="sbee_logo logo" />
+              <img src="./logo-4.png" alt="sbee_logo logo" />
             </div>
             <div className="elem1">
-              <img src="./cre_logo.png" alt="cre_logo logo" />
+              <img src="./logo-5.png" alt="cre_logo logo" />
             </div>
             <div className="elem1">
-              <img src="./mfr_logo.png" alt="mfr_logo logo" />
+              <img src="./logo-6.png" alt="mfr_logo logo" />
             </div>
             <div className="elem1">
-              <img src="./usaid_logo.png" alt="usaid_logo logo" />
+              <img src="./logo-7.png" alt="usaid_logo logo" />
             </div>
           </div>
         </div>
+        
 
         <div className="page8-scroller2">
           <div className="scroll2-grp1">
@@ -1053,19 +1132,20 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/*page9*/}
+      
+      {/* page9 */}
       <div className="page9-container">
-        <div className="page9-cont">
-          <div className="page9-right ml-[110px]" ref={containerRef1}>
+        <div className="page9-cont lg:px-8 w-full flex flex-col lg:flex-row justify-between lg:gap-28">
+          <div className="page9-right ml-0 lg:w-1/3" ref={containerRef1}>
             <div className="page9-title">Its all about our clients. </div>
-            <div className="page9-subtitle">(and what they say!)</div>
+            <div className="page9-subtitle text-[28px] lg:text-[40px]">(and what they say!)</div>
           </div>
-          <div className="page9-des">
+          <div className="page9-des w-1/2 pl-0 lg:w-2/3 gap-30">
             <Slider {...settings}>
-              <div className="mx-auto gap-30 flex flex-col">
-                <div className="comp-name">Roatan Real Estate</div>
+              <div className="mr-auto lg:gap-30 flex flex-col w-1/2">
+                <div className="comp-name pl-[30px] lg:pl-[50px]">Roatan Real Estate</div>
                 <div className="sign">“</div>
-                <div className="comp-review">
+                <div className="comp-review w-fit pl-[30px] lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
                   Coltfox is a much needed blessing and exceeded our
                   expectations in every way. They are honest, straightforward,
                   they take care of all your needs quickly, they are reliable,
@@ -1130,12 +1210,11 @@ const Home = () => {
                 </div>
               </div>
             </Slider>
-            {/* <div className="comp-name">Roatan Real Estate</div>
-            <div className="sign">“</div>
-            <div className="comp-review">Coltfox is a much needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of all your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do. - Marci Wiersma </div> */}
           </div>
         </div>
       </div>
+
+
       {/* page10 */}
       <div className="page10-container">
         <button className="whatweread-btn">What We Read</button>
@@ -1149,8 +1228,8 @@ const Home = () => {
         </div>
         <div className="page10-line" />
 
-        <div className="page10-cont">
-          <div className="page10-blog1">
+        <div className="page10-cont flex-col lg:flex-row lg:gap-8 lg:mx-8">
+          <div className="page10-blog1 lg:w-1/2">
             <img src="./firstblog.png" className="blogimg" />
             <div className="expand-blog">
               <div className="expand-content">
@@ -1162,17 +1241,19 @@ const Home = () => {
                 <img className="blog-arr" src="./page10-arrw.png" alt="" />
               </div>
             </div>
-            <div className="blog-des">
-              <div className="para">
+            <div className="blog-des flex justify-between pl-0">
+              <div className="para sm:text-[20px] lg:text-[30px] w-5/6">
                 First - party data in marketing - what you need to know ?
               </div>
-              <button className="gotoblog-btn">
+              <Link to="/blog-1">
+              <button className="gotoblog-btn ml-0 mt-0">
                 <img src="./crossarrimg.png" />
               </button>
+              </Link>
             </div>
-            <div className="blog-btn">DATA AND ANALYTICS</div>
+            <div className="blog-btn">MARKETING AND DATA</div>
           </div>
-          <div className="page10-blog2">
+          <div className="page10-blog2 lg:w-1/2">
             <img src="./secondblog.png" className="blogimg" />
             <div className="expand-blog">
               <div className="expand-content">
@@ -1184,17 +1265,17 @@ const Home = () => {
                 <img className="blog-arr" src="./page10-arrw.png" alt="" />
               </div>
             </div>
-            <div className="blog-des">
-              <div className="para">
-                The power of performance creative in modern marketing
+            <div className="blog-des flex justify-between pl-0">
+              <div className="para sm:text-[20px] lg:text-[30px] w-5/6">
+              The power of performance creative in modern marketing
               </div>
-              <button className="gotoblog-btn">
+              <Link to="/blog-2">
+              <button className="gotoblog-btn ml-0  mt-0">
                 <img src="./crossarrimg.png" />
               </button>
+              </Link>
             </div>
-            <div className="blog-btn" style={{ width: "310px" }}>
-              STRAREGY AND CREATIVE
-            </div>
+            <div className="blog-btn">SOCIAL MEDIA MARKETING</div>
           </div>
         </div>
       </div>

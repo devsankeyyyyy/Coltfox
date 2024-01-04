@@ -17,6 +17,12 @@ import Foximpact from "../pages/fox-impact.jsx";
 import Permarketing from "../pages/performance-marketing.jsx";
 import Hudbilservices from '../pages/hudbil-services.jsx';
 import Kalacodeservices from '../pages/kalacode-services.jsx';
+import Ourblogs from '../pages/our-blogs.jsx';
+import Whatwedomenu from '../pages/whatwedo-menu.jsx';
+import Privacypolicy from '../pages/privacy-policy.jsx';
+import Blog1 from '../pages/blog-inside1.jsx';
+import Faq from '../pages/faq.jsx';
+import Whowearemenu from '../pages/whoweare-menu.jsx';
 
 const Routers = () => {
   return (
@@ -36,6 +42,12 @@ const Routers = () => {
       <Route path='/performance-marketing' element={<Permarketing/>}/>
       <Route path='/hudbil-services' element={<Hudbilservices/>}/>
       <Route path='/kalacode-services' element={<Kalacodeservices/>}/>
+      <Route path='/our-blogs' element={<Ourblogs/>}/>
+      <Route path='/blog-1' element={<Blog1/>}/>
+      <Route path='/whatwedo-menu' element={<Whatwedomenu/>}/>
+      <Route path='/privacy-policy' element={<Privacypolicy/>}/>
+      <Route path='/faq' element={<Faq/>}/>
+      <Route path='/whoweare-menu' element={<Whowearemenu/>}/>
     </Routes>
   );
 };

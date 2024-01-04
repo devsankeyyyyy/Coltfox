@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -31,10 +32,10 @@ const Footer = () => {
             </svg>
           </div>
           <ul className='text-[#012033] sm:leading-10 mt-2 font-medium sm:text-2xl'>
-            <li>Who we are </li>
-            <li>What we do </li>
-            <li>What we did </li>
-            <li>What we read</li>
+            <li><Link to="/who">Who we are</Link> </li>
+            <li><Link to="/we-do">What we do</Link> </li>
+            <li><Link to="/fox-impact">What we did</Link> </li>
+            <li><Link to="/our-blogs">What we read</Link></li>
           </ul>
         </div>
         <div>
@@ -44,11 +45,12 @@ const Footer = () => {
               <path d="M1 16L16 1M16 1H2.5M16 1V14.5" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </div>
-          <ul className='text-[#012033] sm:leading-10 mt-2 font-medium sm:text-2xl'>
-            <li>Privacy Policy </li>
-            <li>Cookie Policy </li>
-            <li>Accessibility  </li>
-            <li>Terms of service</li>
+          <ul className='text-[#012033] sm:leading-10 mt-2 font-medium sm:text-2xl w-max'>
+            <li><Link to="/privacy-policy">Privacy Policy</Link> </li>
+            <li><Link to="/cookie-policy">Cookie Policy</Link> </li>
+            <li><Link to="/accessibility">Accessibility</Link> </li>
+            <li><Link to="/terms-of-service">Terms of service</Link> </li>
+        
           </ul>
         </div>
         <div>
