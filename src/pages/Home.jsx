@@ -1153,10 +1153,10 @@ const BorderElements = section.querySelectorAll(".animationLogo");
                   say they will do. - Marci Wiersma{" "}
                 </div>
               </div>
-              <div className="mx-auto gap-20 flex flex-col">
-                <div className="comp-name">Sterling Protective</div>
+              <div className="mr-auto lg:gap-30 flex flex-col w-1/2">
+                <div className="comp-name pl-[30px] lg:pl-[50px]">Sterling Protective</div>
                 <div className="sign">“</div>
-                <div className="comp-review">
+                <div className="comp-review w-fit pl-[30px] lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
                   We re-did our website twice in a 12 month period. There was no
                   comparison between the first company and Coltfox.
                   Professional, Creative, Attentive to Detail, Excellent
@@ -1164,10 +1164,10 @@ const BorderElements = section.querySelectorAll(".animationLogo");
                   would not have had to do it twice. - Mohan Das
                 </div>
               </div>
-              <div className="mx-auto gap-20 flex flex-col">
-                <div className="comp-name">Gibbs Inc</div>
+              <div className="mr-auto lg:gap-30 flex flex-col w-1/2">
+                <div className="comp-name pl-[30px] lg:pl-[50px]">Gibbs Inc</div>
                 <div className="sign">“</div>
-                <div className="comp-review">
+                <div className="comp-review w-fit pl-[30px] lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
                   Coltfox has been instrumental in helping us build an
                   incredible lead generating machine through our AdWords and
                   remarketing campaigns. Working with Azrael is a pleasure; with
@@ -1175,10 +1175,10 @@ const BorderElements = section.querySelectorAll(".animationLogo");
                   efficiency and a very solid ROI.. - Vaneesa
                 </div>
               </div>
-              <div className="mx-auto gap-20 flex flex-col">
-                <div className="comp-name">JEF Techno</div>
+              <div className="mr-auto lg:gap-30 flex flex-col w-1/2">
+                <div className="comp-name pl-[30px] lg:pl-[50px]">JEF Techno</div>
                 <div className="sign">“</div>
-                <div className="comp-review">
+                <div className="comp-review w-fit pl-[30px] lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
                   Coltfox has been instrumental in providing excellence in
                   digital marketing. We are continuously impressed with their
                   level of service and consider them a key marketing partner in
@@ -1187,10 +1187,10 @@ const BorderElements = section.querySelectorAll(".animationLogo");
                   Prashanth
                 </div>
               </div>
-              <div className="mx-auto gap-20 flex flex-col">
-                <div className="comp-name">D-Capital Inc</div>
+              <div className="mr-auto lg:gap-30 flex flex-col w-1/2">
+                <div className="comp-name pl-[30px] lg:pl-[50px]">D-Capital Inc</div>
                 <div className="sign">“</div>
-                <div className="comp-review">
+                <div className="comp-review w-fit pl-[30px] lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
                   We enjoyed working with coltfox on our new website. The team
                   had lots of ideas to make the website look great, as well as
                   practical advice to ensure the site is both user-friendly and
@@ -1198,10 +1198,10 @@ const BorderElements = section.querySelectorAll(".animationLogo");
                   Sindu Umadevan
                 </div>
               </div>
-              <div className="mx-auto gap-20 flex flex-col">
-                <div className="comp-name">Lakshmi Corporation</div>
+              <div className="mr-auto lg:gap-30 flex flex-col w-1/2">
+                <div className="comp-name pl-[30px] lg:pl-[50px]">Lakshmi Corporation</div>
                 <div className="sign">“</div>
-                <div className="comp-review">
+                <div className="comp-review w-fit pl-[30px] lg:pl-[50px] lg:w-[50%] mb-10 ml-0">
                   We have been working with Coltfox for several years and
                   continue to be impressed with their professionalism. We work
                   closely with the Coltfox team to meet our goals and
