@@ -627,7 +627,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
   </div>
 </div>
 
-<div className="bg-[#f2f2f2] flex overflow-hidden py-12 sm:py-0 px-4 lg:px-8">
+<div className="pge-2 bg-[#f2f2f2] flex overflow-hidden py-12 sm:py-0 px-4 lg:px-8">
   <div className="bg-white rounded-3xl shadow-md w-full mx-auto p-4 sm:p-6 md:flex md:justify-between md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12">
 
     <div className="w-full md:w-1/2 px-2 sm:px-4 mb-6">
@@ -642,19 +642,19 @@ const BorderElements = section.querySelectorAll(".animationLogo");
       </p>
     </div>
     
-    <div className="w-full md:w-1/2 flex flex-col justify-center items-center gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
+    <div className="w-full md:w-1/2 mt-auto flex lg:pt-20 lg:pb-12 flex-col justify-center items-center gap-4 sm:gap-6 lg:gap-0 xl:gap-10">
   <div className="w-full flex justify-center">
     {[0, 1, 2, 3].map((index) => (
       (currentIndex === index) && (
-        <div className="comp-c bg-[#d9d3d3] relative rounded-[100px] flex flex-col items-center h-5/6 mt-auto justify-center px-4 py-12 w-3/4 xl:w-1/2" key={index}>
-          <img src={content[index].imgSrc} alt="" className="w-1/2" />
-          <p className="w-fit h-fit font-poppins text-base sm:text-lg md:text-xl lg:text-2xl text-center mt-4">
+        <div className="comp-c shadow-inner bg-[#d9d3d3] relative rounded-[100px] flex flex-col items-center h-fit mt-auto justify-center gap-2 px-0 py-8 lg:w-[95%] xl:w-5/6" key={index}>
+          <img src={content[index].imgSrc} alt="" className="w-2/5 h-[72px]" />
+          <p className="w-[513px] h-[130px] flex items-center justify-center font-poppins text-base sm:text-lg md:text-xl lg:text-2xl text-left mt-4">
             {content[index].pContent}
           </p>
-          <button className="rounded-full bg-white flex items-center justify-center text-black text-lg gap-2 mt-4 px-6 py-2 sm:py-5">
+          <button className="rounded-full bg-white flex items-center justify-center text-black text-lg gap-2 mt-4  px-6 py-2 sm:py-2">
             Learn more <FontAwesomeIcon icon={faArrowRight} className="text-black text-1.5rem ml-2" />
           </button>
-          <div className="mt-6">
+          <div className="mt-4">
             <img src={content[index].imge} alt="line design" />
           </div>
         </div>
@@ -702,8 +702,8 @@ const BorderElements = section.querySelectorAll(".animationLogo");
       </div>
 
       {/*page4*/}
-      <div className="page4-container flex flex-col lg:flex-row px-8">
-        <div className="page4-left lg:ml-10 2xl:w-full">
+      <div className="page4-container flex flex-col lg:flex-row px-8 xl:gap-8">
+        <div className="page4-left lg:ml-10 xl:w-1/2">
           <button className="whatwedo-btn"><Link to="/we-do">What We Do</Link></button>
           <div className="page4-title">Our Services</div>
           <div className="page4-des lg:w-full">
@@ -776,8 +776,8 @@ const BorderElements = section.querySelectorAll(".animationLogo");
             />
           </button>
         </div>
-        <div className="page4-right mt-4 lg:mt-auto lg:pb-14 lg:mr-16 h-full px-2 lg:px-8 ">
-          <div className="changing-desof w-fit 2xl:mx-auto 2xl:w-1/2">
+        <div className="page4-right mt-4 lg:mt-auto lg:pb-4 lg:mr-16 h-full px-2 lg:px-8 xl:w-1/2">
+          <div className="changing-desof w-fit 2xl:mx-auto xl:w-fit">
             <div className="innertitl flex ">   
               {selectedService}
               <img src="./arr-w-learn.png" alt="Learn more" className="w-[10%] h-[10%] mt-4" />
@@ -1287,11 +1287,11 @@ const BorderElements = section.querySelectorAll(".animationLogo");
         </div>
         <div className="page10-line" />
 
-        <div className="page10-cont flex-col lg:flex-row lg:gap-8 lg:mx-8 justify-between lg:gap-8 lg:px-6">
-          <div className="page10-blog1 flex flex-col lg:w-1/2 pr-0">
-          <div className="w-full flex flex-col items-center">
-            <img src="./firstblog.png" className="blogimg h-fit" />
-            <div className="expand-blog">
+        <div className="flex flex-col lg:flex-row py-8 px-2 lg:gap-12">
+        <div className="blog-1 flex flex-col items-center w-full lg:w-1/2 relative">
+        <div className="w-full flex flex-col items-center">
+        <img src="./firstblog.png" className="blogimg w-full h-fit xl:h-[480px]" />
+        <div className="expand-blog">
               <div className="expand-content">
                 <img
                   src="./page10-insideimg.png"
@@ -1300,49 +1300,49 @@ const BorderElements = section.querySelectorAll(".animationLogo");
                 />
                 <img className="blog-arr" src="./page10-arrw.png" alt="" />
               </div>
-            </div>
-            <div className="blog-des flex justify-between pl-0 2xl:w-[670px]">
-              <div className="para sm:text-[20px] lg:text-[30px] w-4/5 2xl:w-5/6">
-                First - party data in marketing - what you need to know ?
-              </div>
-              <Link to="/blog-1">
-              <button className="gotoblog-btn ml-0 mt-0">
-                <img src="./crossarrimg.png" />
-              </button>
-              </Link>
-            </div>
-            
-            </div>
-            <div className="blog-btn mt-0 2xl:ml-[20%]">MARKETING AND DATA</div>
-          </div>
-          <div className="page10-blog2 flex flex-col lg:w-1/2 pr-0">
-          <div className="w-full flex flex-col items-center">
-            <img src="./secondblog.png" className="blogimg h-fit" />
-            <div className="expand-blog">
-              <div className="expand-content">
-                <img
-                  src="./page10-insideimg.png"
-                  className="rotating-img"
-                  alt=""
-                />
-                <img className="blog-arr" src="./page10-arrw.png" alt="" />
-              </div>
-            </div>
-            <div className="blog-des flex justify-between pl-0 2xl:w-[670px]">
-              <div className="para sm:text-[20px] lg:text-[30px] w-4/5 2xl:w-5/6">
-                Social Media Marketing Tips For the Year - 2024 !
-              </div>
-              <Link to="/blog-2">
-              <button className="gotoblog-btn ml-0 mt-0">
-                <img src="./crossarrimg.png" />
-              </button>
-              </Link>
-            </div>
-            
-            </div>
-            <div className="blog-btn mt-0 2xl:ml-[20%]">SOCIAL MEDIA MARKETING</div>
-          </div>
         </div>
+        <div className="details flex gap-6  py-4 w-full justify-between mt-6">
+        <div className="link flex flex-col justify-items">
+          <div className="leading-tight font-medium text-2xl md:text-3xl 2xl:text-4xl text-[#1F1F21]">First - party data in marketing - what you need to know ?</div>
+          <div className="blog-btn mt-12">MARKETING AND DATA</div>
+        </div>
+        <Link to="/blog-1" className="">
+          <button className="gotoblog-btn ml-0 mt-0 h-[60px] w-[60px]">
+            <img src="./crossarrimg.png" />
+          </button>
+        </Link>
+        </div>
+        </div>
+        </div>
+
+        <div className="blog-2 flex flex-col items-center w-full lg:w-1/2 relative">
+        <div className="w-full flex flex-col items-center">
+        <img src="./secondblog.png" className="blogimg w-full h-fit xl:h-[480px]" />
+        <div className="expand-blog">
+              <div className="expand-content">
+                <img
+                  src="./page10-insideimg.png"
+                  className="rotating-img"
+                  alt=""
+                />
+                <img className="blog-arr" src="./page10-arrw.png" alt="" />
+              </div>
+        </div>
+        <div className="details flex gap-6  py-4 w-full justify-between mt-6">
+        <div className="link flex flex-col justify-items">
+          <div className="leading-tight font-medium text-2xl md:text-3xl 2xl:text-4xl text-[#1F1F21]">Social Media Marketing Tips For the Year - 2024 !</div>
+          <div className="blog-btn mt-12">SOCIAL MEDIA MARKETING</div>
+        </div>
+        <Link to="/blog-2" className="">
+          <button className="gotoblog-btn ml-0 mt-0 h-[60px] w-[60px]">
+            <img src="./crossarrimg.png" />
+          </button>
+        </Link>
+        </div>
+        </div>
+        </div>
+        </div>
+
       </div>
       <Footer />
     </div>
