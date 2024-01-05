@@ -19,49 +19,6 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const titleRef = useRef(null);
 
-  function adjustDividerWidth() {
-  const logoImage = document.querySelector('.sec1-logo-image');
-  if (logoImage) {
-    const logoOffsetLeft = logoImage.offsetLeft;
-    const divider = document.querySelector('.page7-liner1');
-    if (divider) {
-      divider.style.width = `${logoOffsetLeft}px`;
-    }
-  }
-}
-
-// Adjust the divider width on load and window resize
-window.addEventListener('load', adjustDividerWidth);
-window.addEventListener('resize', adjustDividerWidth);
-
-function adjustDividerWidth2() {
-  const logoImage2 = document.querySelector('.sec2-logo-image');
-  if (logoImage2) {
-    const logoOffsetLeft2 = logoImage2.offsetLeft;
-    const divider2 = document.querySelector('.page7-liner2');
-    if (divider2) {
-      divider2.style.width = `${logoOffsetLeft2}px`;
-    }
-  }
-}
-
-window.addEventListener('load', adjustDividerWidth2);
-window.addEventListener('resize', adjustDividerWidth2);
-
-function adjustDividerWidth3() {
-  const logoImage3 = document.querySelector('.sec3-logo-image');
-  if (logoImage3) {
-    const logoOffsetLeft3 = logoImage3.offsetLeft;
-    const divider3 = document.querySelector('.page7-liner3');
-    if (divider3) {
-      divider3.style.width = `${logoOffsetLeft3}px`;
-    }
-  }
-}
-
-window.addEventListener('load', adjustDividerWidth3);
-window.addEventListener('resize', adjustDividerWidth3);
-
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -385,6 +342,69 @@ window.addEventListener('resize', adjustDividerWidth3);
     });
   }, []);
   //page7
+  function adjustDividerWidth() {
+    const logoImage = document.querySelector('.sec1-logo-image');
+    const divider = document.querySelector('.page7-liner1');
+  
+    if (!divider) return;
+  
+    if (window.innerWidth < 1024) {
+      divider.classList.add('divider-small-screen');
+    } else {
+      divider.classList.remove('divider-small-screen');
+      if (logoImage) {
+        const logoOffsetLeft = logoImage.offsetLeft;
+        divider.style.width = `${logoOffsetLeft}px`;
+      }
+    }
+  }
+  
+  // Adjust the divider width on load and window resize
+  window.addEventListener('load', adjustDividerWidth);
+  window.addEventListener('resize', adjustDividerWidth);
+
+  function adjustDividerWidth2() {
+    const logoImage2 = document.querySelector('.sec2-logo-image');
+    const divider2 = document.querySelector('.page7-liner2');
+  
+    if (!divider2) return;
+  
+    if (window.innerWidth < 1024) {
+      divider2.classList.add('divider-small-screen2');
+    } else {
+      divider2.classList.remove('divider-small-screen2');
+      if (logoImage2) {
+        const logoOffsetLeft2 = logoImage2.offsetLeft;
+        divider2.style.width = `${logoOffsetLeft2}px`;
+      }
+    }
+  }
+  
+  // Adjust the divider width on load and window resize
+  window.addEventListener('load', adjustDividerWidth2);
+  window.addEventListener('resize', adjustDividerWidth2);
+
+  function adjustDividerWidth3() {
+    const logoImage3 = document.querySelector('.sec3-logo-image');
+    const divider3 = document.querySelector('.page7-liner3');
+  
+    if (!divider3) return;
+  
+    if (window.innerWidth < 1024) {
+      divider3.classList.add('divider-small-screen3');
+    } else {
+      divider3.classList.remove('divider-small-screen3');
+      if (logoImage3) {
+        const logoOffsetLeft3 = logoImage3.offsetLeft;
+        divider3.style.width = `${logoOffsetLeft3}px`;
+      }
+    }
+  }
+  
+  // Adjust the divider width on load and window resize
+  window.addEventListener('load', adjustDividerWidth3);
+  window.addEventListener('resize', adjustDividerWidth3);
+
   const sectionRefs = useRef([]);
  useEffect(() => {
   gsap.registerPlugin(ScrollTrigger);
@@ -756,7 +776,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
             />
           </button>
         </div>
-        <div className="page4-right mt-4 lg:mt-24 lg:mr-16 h-full">
+        <div className="page4-right mt-4 lg:mt-auto lg:pb-14 lg:mr-16 h-full px-2 lg:px-8 ">
           <div className="changing-desof w-fit 2xl:mx-auto 2xl:w-1/2">
             <div className="innertitl flex ">   
               {selectedService}
@@ -1013,7 +1033,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
       
       {/*page7*/}
 
-      <div className="bg-[url('/yellowpaper.jpeg')] bg-cover min-h-[90vh] flex flex-col items-start text-center p-4 md:p-10 lg:pl-20 lg:pb-36 overflow-hidden">
+      <div className="bg-[url('/yellowpaper.jpeg')] bg-cover min-h-[90vh] flex flex-col items-start text-center px-6 py-8 md:p-10 lg:pl-20 lg:pb-36 overflow-hidden">
     <Link to="/industries">
     <button className="mt-2 w-44 h-9 rounded-full bg-white flex items-center justify-center font-poppins font-medium text-black text-sm px-4 shadow hover:bg-orange-400">
         What We Focus

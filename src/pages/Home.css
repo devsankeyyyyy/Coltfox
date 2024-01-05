@@ -907,6 +907,7 @@ button:hover::before {
   text-align: center;
   overflow: hidden;
   padding: 30px 0px;
+  align-items: flex-start;
 }
 
 .page4-left {
@@ -1046,6 +1047,14 @@ button:hover::before {
   flex-direction: column;
 }
 
+.page4-right {
+  min-height: 500px; /* Adjust the height as needed */
+}
+
+/* or, for the child container */
+.changing-desof {
+  min-height: 500px; /* Adjust the height as needed */
+}
 .changing-desof {
   width: 561px;
   color: #ffffff;
@@ -1855,6 +1864,15 @@ button:hover::before {
   font-size: 56px;
   line-height: 70px;
   text-align: left;
+}
+.divider-small-screen {
+  width: auto; 
+}
+.divider-small-screen2 {
+  width: auto; 
+}
+.divider-small-screen3 {
+  width: auto; 
 }
 .page7-liner1 {
   width: calc(100% - var(--logo-width));
