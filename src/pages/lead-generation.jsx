@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import NavbarAndFullscreenMenu from '../components/menu/menu';
 import Footer from '../components/footer/footer';
 
-const Permarketing = () => {
+const Leadgen = () => {
 
     const [dropdownsOpen, setDropdownsOpen] = useState({
         menu1: false,
@@ -25,26 +25,26 @@ const Permarketing = () => {
             <NavbarAndFullscreenMenu />
 
             <div className="acma mt-10 px-3 pb-0 sm:pb-6 text-center sm:px-20 text-[#DF2323] text-5xl sm:text-[6rem] font-bold leading-tight">
-                <h1> Big ideas </h1>
-                <h1> FOX results </h1>
-                <h1> with performance </h1>
-                <h1> marketing </h1>
+                <h1> Lead generation </h1>
+                <h1> FOX higher </h1>
+                <h1> conversions & </h1>
+                <h1> growth </h1>
             </div>
 
-            <div className="flex justify-center items-center pt-20 pb-5 w-full md:w-3/4 lg:w-1/2 mx-auto">
+            <div className="flex justify-center items-center pt-20 pb-5 w-full md:w-3/4 lg:w-4/5 mx-auto">
                 <div className='flex flex-col items-center justify-center'>
-                    <div className=" bg-[#FCAB64] w-max mb-10 px-5 rounded-full py-2 text-white text-xl font-normal">PERFORMANCE MARKETING</div>
-                    <div className="text-center px-5 pb-10 text-[#012033] text-4xl sm:text-[4rem] font-bold leading-tight">
-                        Creative solutions for measurable results.
+                    <div className=" bg-[#FCAB64] w-max mb-10 px-5 rounded-full py-2 text-white text-xl font-normal">LEAD GENERATION</div>
+                    <div className=" text-center px-0 pb-10 text-[#012033] text-4xl sm:text-[4rem] font-bold leading-tight">
+                        Connecting creativity <br /> and conversion
                     </div>
-                    <div className="text-center px-5 pb-10 text-[#012033] text-2xl sm:text-[1.5rem] font-normal">
-                        <p> We use a strategic, creative, and integrative approach that delivers impressive success aligned with your mission. </p>
+                    <div className="px-2 sm:px-0 text-center px-0 pb-10 text-[#012033] text-2xl sm:text-[1.5rem] font-normal">
+                        <p> Through Website Design & Development, Pay-Per-Click Advertising, Marketing Automation, and SEO Services, we deliver results that get people clicking and converting. </p>
                     </div>
                 </div>
             </div>
 
             <div className="flex justify-center items-center pb-10 w-full md:w-4/5 lg:w-5/6 mx-auto">
-                <img className='w-full' src='./per-marketing-mainimg.png' alt='per-marketing-main' />
+                <img className='w-full' src='./lead-gen.png' alt='lead-gen.png' />
             </div>
 
             <div className="mt-0 sm:mt-12 bg-[url('/greypaper.jpeg')] bg-cover">
@@ -111,15 +111,15 @@ const Permarketing = () => {
                 <div className="title text-center bg-[#FCAB64] h-[20%] w-fit sm:w-1/3 px-2 rounded-full py-2 text-white text-xl font-normal">SUPPORTING SOLUTIONS</div>
                 <div className='lg:mt-10 sm:mt-3 w-full'>
                     <div className="leading-tight text-[#012033] text-4xl sm:text-[3rem] font-semibold">
-                        Create unexpected experiences. Incite curiosity. Change behaviours.
+                    We put people at the heart of all the lead generation we do to drive results.
                     </div>
                     <div className='text-2xl font-normal leading-9 text-[#012033] pt-8 gap-10'>
-                        <p>We focus on strategic, data-driven solutions to amplify your message.</p>
+                        <p>At Coltfox, we create experiences to promote emotional connections and meaningful relationships.</p>
                     </div>
                     <div className="mt-7 bg-white flex flex-col">
                         <div className="menu-1 pt-5 px-2 sm:px-5 flex items-center">
                             <div className="text-3xl font-semibold leading-9 text-[#012033] w-fit">
-                                Media Planning
+                                B2B & B2C Marketing
                             </div>
                             <svg
                                 onClick={() => handleSvgClick('menu1')}
@@ -139,13 +139,13 @@ const Permarketing = () => {
                         </div>
                         {dropdownsOpen.menu1 && (
                             <div className=" bg-white w-full p-5 leading-8 text-xl font-light text-[#012033]">
-                                <p>We also help you in Media Planning by Creating an elevated customer journey requires a broad perspective. We plan, buy, and optimize media using a multi-channel approach.</p>
+                                <p>We are a full service digital agency specialized in B2B enterprise marketing. With the right mix of content, advertising and account based marketing, we help our clients connect and network with thousands of buyers and decision makers every month to explore business opportunities through one-on-one conversations.</p>
                             </div>
                         )}
                         <div className="h-0.5 w-full bg-gray-800 mt-5" />
                         <div className="menu-2 pt-5 px-2 sm:px-5 flex items-center">
-                            <div className="text-3xl font-semibold leading-9 text-[#012033] w-3/5 sm:w-fit">
-                                Performance Creative
+                            <div className="text-3xl font-semibold leading-9 text-[#012033] w-4/5 sm:w-fit">
+                                Conversion Rate optimization CRO
                             </div>
                             <svg
                                 onClick={() => handleSvgClick('menu2')}
@@ -165,13 +165,13 @@ const Permarketing = () => {
                         </div>
                         {dropdownsOpen.menu2 && (
                             <div className=" bg-white w-full p-5 leading-8 text-xl font-light text-[#012033]">
-                                <p>We also help you in performance creative Ads need to be memorable and measurable today. We combine data and technology with creativity to share stories, drive action, and deliver impact results.</p>
+                                <p>Reach new levels of success with a solid CRO marketing strategy expertly tailored to your unique business requirements! Put your conversion marketing needs in the capable hands of our conversion rate optimization agency and reap the benefits of Conversion Rate Optimization services done the right way.</p>
                             </div>
                         )}
                         <div className="h-0.5 w-full bg-gray-800 mt-5" />
                         <div className="menu-3 pt-5 px-2 sm:px-5 flex items-center">
                             <div className="text-3xl font-semibold leading-9 text-[#012033] w-4/5 sm:w-fit">
-                                SEM (Search Engine Marketing)
+                                Email Marketing
                             </div>
                             <svg
                                 onClick={() => handleSvgClick('menu3')}
@@ -191,13 +191,13 @@ const Permarketing = () => {
                         </div>
                         {dropdownsOpen.menu3 && (
                             <div className=" bg-white w-full p-5 leading-8 text-xl font-light text-[#012033]">
-                                <p>At Coltfox, we use paid and unpaid methods to increase traffic and brand awareness for quick results. if client need the traffic organically without any paid campaign with everlasting results, we work on custom plans from 6-12 months.</p>
+                                <p>Choose Coltfox for your email marketing needs and get more value for your money. With Coltfox Standard plan, you'll have access to more automation templates, a more customization email builder with more object blocks, a comprehensive marketing calendar, dashboard views for report visualizations, dynamic content in email.</p>
                             </div>
                         )}
                         <div className="h-0.5 w-full bg-gray-800 mt-5" />
                         <div className="menu-4 pt-5 px-2 sm:px-5 flex items-center">
                             <div className="text-3xl font-semibold leading-9 text-[#012033] w-3/5 sm:w-fit">
-                                Paid Digital & Social Media
+                                Landing Page optimization
                             </div>
                             <svg
                                 onClick={() => handleSvgClick('menu4')}
@@ -217,13 +217,13 @@ const Permarketing = () => {
                         </div>
                         {dropdownsOpen.menu4 && (
                             <div className=" bg-white w-full p-5 leading-8 text-xl font-light text-[#012033]">
-                                <p>At Coltfox, Our high-impact pay-per-click advertising and social media marketing drive results for continuous campaign growth to maximize conversions and generate more sales. Clients who are looking for paid social media campaigns on monthly targets.</p>
+                                <p>It doesn’t matter how amazing your landing page is if no one sticks around to see it. Unless your landing page loads within a couple of seconds, potential visitors are going to get impatient and move onto something else. Mobile landing page optimization is especially important in this regard as searches on mobile continue to increase.</p>
                             </div>
                         )}
                         <div className="h-0.5 w-full bg-gray-800 mt-5" />
                         <div className="menu-5 pt-5 px-2 sm:px-5 flex items-center">
                             <div className="text-3xl font-semibold leading-9 text-[#012033] w-3/5 sm:w-fit">
-                                Programmatic Media Buying
+                                Account Based Marketing ABM
                             </div>
                             <svg
                                 onClick={() => handleSvgClick('menu5')}
@@ -243,13 +243,13 @@ const Permarketing = () => {
                         </div>
                         {dropdownsOpen.menu5 && (
                             <div className=" bg-white w-full p-5 leading-8 text-xl font-light text-[#012033]">
-                                <p>Reach your audience in real-time with precision targeting to drive conversions and build brand awareness. with this service programmatic media buying we at Coltfox help you in step by step process.</p>
+                                <p>We are a team of account-based marketing and demand generation specialists who leverage our SEO, PPC, content marketing, programmatic, marketing automation, and analytics expertise who provide the only insight that matters, when an account is in-market and ready to buy from you.</p>
                             </div>
                         )}
                         <div className="h-0.5 w-full bg-gray-800 mt-5" />
                         <div className="menu-6 pt-5 px-2 sm:px-5 flex items-center">
                             <div className="text-3xl font-semibold leading-9 text-[#012033] w-4/5 sm:w-fit">
-                                Direct Response Marketing
+                                SEO Services
                             </div>
                             <svg
                                 onClick={() => handleSvgClick('menu6')}
@@ -269,7 +269,7 @@ const Permarketing = () => {
                         </div>
                         {dropdownsOpen.menu6 && (
                             <div className=" bg-white w-full p-5 leading-8 text-xl font-light text-[#012033]">
-                                <p>We’ll define your goals, crystallize your audience, and then execute an integrated media strategy to drive customers where you want them to go with the target based acquisitions in no time. with real time results.</p>
+                                <p>Coltfox is an SEO agency that understands your niche and can boost your ranking for specific search terms. Your dedicated SEO specialist will review the keywords your website is currently ranking for, take your keyword wish list and conduct additional keyword research to build a list that makes the most sense for your website and the competitive landscape.</p>
                             </div>
                         )}
                         <div className="h-0.5 w-full bg-gray-800 mt-5" />
@@ -286,4 +286,4 @@ const Permarketing = () => {
     )
 }
 
-export default Permarketing
+export default Leadgen

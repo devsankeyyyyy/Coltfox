@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import NavbarAndFullscreenMenu from '../components/menu/menu';
 import Footer from '../components/footer/footer';
 
-const Permarketing = () => {
+const Contentmarketing = () => {
 
     const [dropdownsOpen, setDropdownsOpen] = useState({
         menu1: false,
@@ -25,26 +25,25 @@ const Permarketing = () => {
             <NavbarAndFullscreenMenu />
 
             <div className="acma mt-10 px-3 pb-0 sm:pb-6 text-center sm:px-20 text-[#DF2323] text-5xl sm:text-[6rem] font-bold leading-tight">
-                <h1> Big ideas </h1>
-                <h1> FOX results </h1>
-                <h1> with performance </h1>
-                <h1> marketing </h1>
+                <h1> Elevate your </h1>
+                <h1> brand with </h1>
+                <h1> Coltfox storytelling </h1>
             </div>
 
             <div className="flex justify-center items-center pt-20 pb-5 w-full md:w-3/4 lg:w-1/2 mx-auto">
                 <div className='flex flex-col items-center justify-center'>
-                    <div className=" bg-[#FCAB64] w-max mb-10 px-5 rounded-full py-2 text-white text-xl font-normal">PERFORMANCE MARKETING</div>
+                    <div className=" bg-[#FCAB64] w-max mb-10 px-5 rounded-full py-2 text-white text-xl font-normal">CONTENT MARKETING</div>
                     <div className="text-center px-5 pb-10 text-[#012033] text-4xl sm:text-[4rem] font-bold leading-tight">
-                        Creative solutions for measurable results.
+                    Powerful content to share your message.
                     </div>
                     <div className="text-center px-5 pb-10 text-[#012033] text-2xl sm:text-[1.5rem] font-normal">
-                        <p> We use a strategic, creative, and integrative approach that delivers impressive success aligned with your mission. </p>
+                        <p> We create valuable, relevant, and consistent content across multiple platforms and channels, including video production, social media marketing, and email marketing. </p>
                     </div>
                 </div>
             </div>
 
             <div className="flex justify-center items-center pb-10 w-full md:w-4/5 lg:w-5/6 mx-auto">
-                <img className='w-full' src='./per-marketing-mainimg.png' alt='per-marketing-main' />
+                <img className='w-full' src='./con-marketing.png' alt='con-marketing' />
             </div>
 
             <div className="mt-0 sm:mt-12 bg-[url('/greypaper.jpeg')] bg-cover">
@@ -111,15 +110,15 @@ const Permarketing = () => {
                 <div className="title text-center bg-[#FCAB64] h-[20%] w-fit sm:w-1/3 px-2 rounded-full py-2 text-white text-xl font-normal">SUPPORTING SOLUTIONS</div>
                 <div className='lg:mt-10 sm:mt-3 w-full'>
                     <div className="leading-tight text-[#012033] text-4xl sm:text-[3rem] font-semibold">
-                        Create unexpected experiences. Incite curiosity. Change behaviours.
+                    Create Once Publish Everywhere to strengthen your brand message.
                     </div>
                     <div className='text-2xl font-normal leading-9 text-[#012033] pt-8 gap-10'>
-                        <p>We focus on strategic, data-driven solutions to amplify your message.</p>
+                        <p>By eliminating the need to create separate content across multiple platforms, we ensure your message is optimized for its intended goals.</p>
                     </div>
                     <div className="mt-7 bg-white flex flex-col">
                         <div className="menu-1 pt-5 px-2 sm:px-5 flex items-center">
                             <div className="text-3xl font-semibold leading-9 text-[#012033] w-fit">
-                                Media Planning
+                                Content Writing
                             </div>
                             <svg
                                 onClick={() => handleSvgClick('menu1')}
@@ -139,13 +138,13 @@ const Permarketing = () => {
                         </div>
                         {dropdownsOpen.menu1 && (
                             <div className=" bg-white w-full p-5 leading-8 text-xl font-light text-[#012033]">
-                                <p>We also help you in Media Planning by Creating an elevated customer journey requires a broad perspective. We plan, buy, and optimize media using a multi-channel approach.</p>
+                                <p>Our content marketing services for SaaS are focused on real results: improving not just your organic search visibility and traffic but also user acquisition.Good content writing helps you reach your potential customers and converts them into real customers.</p>
                             </div>
                         )}
                         <div className="h-0.5 w-full bg-gray-800 mt-5" />
                         <div className="menu-2 pt-5 px-2 sm:px-5 flex items-center">
-                            <div className="text-3xl font-semibold leading-9 text-[#012033] w-3/5 sm:w-fit">
-                                Performance Creative
+                            <div className="text-3xl font-semibold leading-9 text-[#012033] w-4/5 sm:w-fit">
+                                Content Creation
                             </div>
                             <svg
                                 onClick={() => handleSvgClick('menu2')}
@@ -165,13 +164,24 @@ const Permarketing = () => {
                         </div>
                         {dropdownsOpen.menu2 && (
                             <div className=" bg-white w-full p-5 leading-8 text-xl font-light text-[#012033]">
-                                <p>We also help you in performance creative Ads need to be memorable and measurable today. We combine data and technology with creativity to share stories, drive action, and deliver impact results.</p>
+                                <p>We create content that’s comprehensive, evocative, well-researched, original, personable, and SEO-friendly to boost engagement with your prospects. <br/>
+                                What You’ll Get<br/> 
+                                
+                                    <li>How-to guides</li>
+                                    <li>Original research and white papers</li>
+                                    <li>Infographics</li>
+                                    <li>eBooks</li>
+                                    <li>In-depth blog posts and listicles</li>
+                                    <li>Landing page copy</li>
+                                    <li>Email drip campaigns</li>
+                                
+                                </p>
                             </div>
                         )}
                         <div className="h-0.5 w-full bg-gray-800 mt-5" />
                         <div className="menu-3 pt-5 px-2 sm:px-5 flex items-center">
                             <div className="text-3xl font-semibold leading-9 text-[#012033] w-4/5 sm:w-fit">
-                                SEM (Search Engine Marketing)
+                                Content Distribution
                             </div>
                             <svg
                                 onClick={() => handleSvgClick('menu3')}
@@ -191,13 +201,20 @@ const Permarketing = () => {
                         </div>
                         {dropdownsOpen.menu3 && (
                             <div className=" bg-white w-full p-5 leading-8 text-xl font-light text-[#012033]">
-                                <p>At Coltfox, we use paid and unpaid methods to increase traffic and brand awareness for quick results. if client need the traffic organically without any paid campaign with everlasting results, we work on custom plans from 6-12 months.</p>
+                                <p>We distribute your content on high-value, difficult-to-earn, audience-appropriate platforms to solidify your SaaS brand’s reputation and earn quality links. <br />
+                                What You’ll Get <br/>
+                                <li>Blogger and social media influencer outreach</li>
+                                <li>Outreach to niche content communities</li>
+                                <li>Guest blogging outreach</li>
+                                <li>PR and media outreach</li>
+                                <li>Social and display ads</li>
+                                </p>
                             </div>
                         )}
                         <div className="h-0.5 w-full bg-gray-800 mt-5" />
                         <div className="menu-4 pt-5 px-2 sm:px-5 flex items-center">
                             <div className="text-3xl font-semibold leading-9 text-[#012033] w-3/5 sm:w-fit">
-                                Paid Digital & Social Media
+                                Content Audit
                             </div>
                             <svg
                                 onClick={() => handleSvgClick('menu4')}
@@ -217,13 +234,19 @@ const Permarketing = () => {
                         </div>
                         {dropdownsOpen.menu4 && (
                             <div className=" bg-white w-full p-5 leading-8 text-xl font-light text-[#012033]">
-                                <p>At Coltfox, Our high-impact pay-per-click advertising and social media marketing drive results for continuous campaign growth to maximize conversions and generate more sales. Clients who are looking for paid social media campaigns on monthly targets.</p>
+                                <p>We regularly review all the content you have on your SaaS website, fix whatever needs fixing, refresh old content, and find opportunities for continuous improvement. <br />
+                                What You’ll Get <br />
+                                <li>Content updates to keep everything relevant and search-engine friendly</li>
+                                <li>Content repurposing to expand the reach of your most important pieces</li>
+                                <li>Strategic keyword optimization and internal linking to improve your overall SEO and UX</li>
+                                <li>Content analytics with a focus on rankings and referring domains growth</li>
+                                </p>
                             </div>
                         )}
                         <div className="h-0.5 w-full bg-gray-800 mt-5" />
                         <div className="menu-5 pt-5 px-2 sm:px-5 flex items-center">
-                            <div className="text-3xl font-semibold leading-9 text-[#012033] w-3/5 sm:w-fit">
-                                Programmatic Media Buying
+                            <div className="text-3xl font-semibold leading-9 text-[#012033] w-4/5 sm:w-fit">
+                                Content Reporting
                             </div>
                             <svg
                                 onClick={() => handleSvgClick('menu5')}
@@ -243,13 +266,19 @@ const Permarketing = () => {
                         </div>
                         {dropdownsOpen.menu5 && (
                             <div className=" bg-white w-full p-5 leading-8 text-xl font-light text-[#012033]">
-                                <p>Reach your audience in real-time with precision targeting to drive conversions and build brand awareness. with this service programmatic media buying we at Coltfox help you in step by step process.</p>
+                                <p>We provide periodic updates and content marketing reports so you know exactly how your content is performing in terms of SEO and conversions. <br />
+                                What You’ll Get <br />
+                                <li>Brand awareness metrics that show your content’s reach and organic traffic</li>
+                                <li>Engagement metrics that show how well prospects engage with your content</li>
+                                <li>Backlinks metrics that show how well your content assets are earning inbound links</li>
+                                <li>Lead generation metrics that show how many people convert into leads and sign-ups</li>
+                                </p>
                             </div>
                         )}
                         <div className="h-0.5 w-full bg-gray-800 mt-5" />
                         <div className="menu-6 pt-5 px-2 sm:px-5 flex items-center">
                             <div className="text-3xl font-semibold leading-9 text-[#012033] w-4/5 sm:w-fit">
-                                Direct Response Marketing
+                                SEO Consulting
                             </div>
                             <svg
                                 onClick={() => handleSvgClick('menu6')}
@@ -269,7 +298,13 @@ const Permarketing = () => {
                         </div>
                         {dropdownsOpen.menu6 && (
                             <div className=" bg-white w-full p-5 leading-8 text-xl font-light text-[#012033]">
-                                <p>We’ll define your goals, crystallize your audience, and then execute an integrated media strategy to drive customers where you want them to go with the target based acquisitions in no time. with real time results.</p>
+                                <p>Besides content marketing, our consultants help your SaaS rank high in search results via technical SEO and link-building guidance. <br />
+                                What You’ll Get <br/>
+                                <li>In-depth SEO audit and review</li>
+                                <li>Technical and on-site SEO recommendations</li>
+                                <li>Backlink profile audit and management</li>
+                                <li>SEO strategy and performance reporting</li>
+                                </p>
                             </div>
                         )}
                         <div className="h-0.5 w-full bg-gray-800 mt-5" />
@@ -286,4 +321,4 @@ const Permarketing = () => {
     )
 }
 
-export default Permarketing
+export default Contentmarketing

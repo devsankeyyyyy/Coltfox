@@ -19,6 +19,50 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const titleRef = useRef(null);
 
+  function adjustDividerWidth() {
+  const logoImage = document.querySelector('.sec1-logo-image');
+  if (logoImage) {
+    const logoOffsetLeft = logoImage.offsetLeft;
+    const divider = document.querySelector('.page7-liner1');
+    if (divider) {
+      divider.style.width = `${logoOffsetLeft}px`;
+    }
+  }
+}
+
+// Adjust the divider width on load and window resize
+window.addEventListener('load', adjustDividerWidth);
+window.addEventListener('resize', adjustDividerWidth);
+
+function adjustDividerWidth2() {
+  const logoImage2 = document.querySelector('.sec2-logo-image');
+  if (logoImage2) {
+    const logoOffsetLeft2 = logoImage2.offsetLeft;
+    const divider2 = document.querySelector('.page7-liner2');
+    if (divider2) {
+      divider2.style.width = `${logoOffsetLeft2}px`;
+    }
+  }
+}
+
+window.addEventListener('load', adjustDividerWidth2);
+window.addEventListener('resize', adjustDividerWidth2);
+
+function adjustDividerWidth3() {
+  const logoImage3 = document.querySelector('.sec3-logo-image');
+  if (logoImage3) {
+    const logoOffsetLeft3 = logoImage3.offsetLeft;
+    const divider3 = document.querySelector('.page7-liner3');
+    if (divider3) {
+      divider3.style.width = `${logoOffsetLeft3}px`;
+    }
+  }
+}
+
+window.addEventListener('load', adjustDividerWidth3);
+window.addEventListener('resize', adjustDividerWidth3);
+
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -268,7 +312,7 @@ const Home = () => {
     "Performance Marketing"
   );
 
-  const handleServiceClick = (serviceName) => {
+  const handleServiceHover = (serviceName) => {
     setSelectedService(serviceName);
   };
   //page5
@@ -547,10 +591,10 @@ const BorderElements = section.querySelectorAll(".animationLogo");
     <h1 className="text-[#df2323] font-semibold text-4xl md:text-[3rem] lg:text-[4.5rem] mb-6 sm:mb-20 leading-tight">
       We help
     </h1>
-    {/* <p className="animation mb-6 sm:mb-20">
+    <p className="animation mb-6 sm:mb-20">
         <span className="head2-anm bg-[url('/yellowpaper.jpeg')] text-3xl md:text-[3rem] lg:text-[4.5rem] bg-cover rounded-full text-[#1f1f21] font-semibold leading-tight px-4 py-2 sm:px-8 sm:py-4"></span>
         <span className="typing-cursor"></span>
-    </p> */}
+    </p>
     <h1 className="text-[#df2323] font-semibold text-4xl md:text-[3rem] lg:text-[4.5rem] mb-6 sm:mb-20 leading-tight">
       by marketing
     </h1>
@@ -563,57 +607,45 @@ const BorderElements = section.querySelectorAll(".animationLogo");
   </div>
 </div>
 
+<div className="bg-[#f2f2f2] flex overflow-hidden py-12 sm:py-0 px-4 lg:px-8">
+  <div className="bg-white rounded-3xl shadow-md w-full mx-auto p-4 sm:p-6 md:flex md:justify-between md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12">
 
-
-
-
-      <div className="page2-container px-4 lg:px-8 py-0">
-  <div className="page2-rect bg-white rounded-3xl shadow-md w-full px-4 sm:px-6 flex flex-col md:flex-row justify-between gap-4 md:gap-6 lg:gap-4 xl:gap-10 2xl:gap-12">
-
-    <div className="page2-right ml-0 lg:mt-0 w-full md:w-1/2 px-2 sm:px-4 ">
-      <button className="weare w-1/2 sm:w-1/3 h-47px rounded-full bg-white flex items-center justify-center text-black text-16px px-18px gap-8 box-shadow-2px-4px sm:px-4 sm:py-2 md:text-base lg:text-lg xl:text-xl">
+    <div className="w-full md:w-1/2 px-2 sm:px-4 mb-6">
+      <button className="w-1/2 sm:w-1/3 h-12 rounded-full bg-white flex items-center justify-center text-black text-lg px-4 gap-2 shadow-md hover:bg-[#fcab64]">
         Who We Are
       </button>
-      <div ref={titleRef} className="page2-title pt-10 text-[#df2323] font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 md:mb-8 lg:mb-10 xl:mb-12">
+      <h1 ref={titleRef} className="font-poppins font-bold text-[#df2323] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl my-6 md:my-8 lg:my-10 xl:my-12">
         Our Brands
-      </div>
-      <div className="page2-description font-poppins text-[#1F1F21] font-normal text-base sm:text-lg md:text-xl leading-normal sm:leading-relaxed md:leading-loose">
-        Hudbil Private Limited is a reliable company, with multiple brands under one umbrella. We are here to enable you with top-notch digital solutions & products through a proven cost-saving model. This allows you to scale, optimize, expand, and enhance your business with an individual approach. This is our game style.
-      </div>
+      </h1>
+      <p className="font-poppins text-[#1F1F21] text-base sm:text-lg md:text-xl leading-normal sm:leading-relaxed md:leading-loose">
+      Hudbil Private Limited is a reliable company, with multiple brands under one umbrella. We are here to enable you with top-notch digital solutions & products through a proven cost-saving model. This allows you to scale, optimize, expand, and enhance your business with an individual approach. This is our game style.
+      </p>
     </div>
     
-    <div className="comp-cards w-full md:w-1/2 flex flex-col justify-center items-center gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
-      <div className="brand flex flex-col gap-20">
-        {[0, 1, 2].map((index) => (
-          <div className=" comp-c bg-[#d9d3d3] rounded-100px mt-0 flex justify-center items-center flex-col px-0 py-0 w-1/2" key={index}>
-            <img
-              src={content[(currentIndex + index) % content.length].imgSrc}
-              alt=""
-              className="w-2/3 h-[20%]"
-            />
-            <p className="mt-4 font-poppins text-base sm:text-lg md:text-xl lg:text-2xl text-center">
-              {content[(currentIndex + index) % content.length].pContent}
-            </p>
-            <button className="learnmore  rounded-full bg-white flex items-center justify-center text-black text-16px gap-10px sm:mt-4 px-4 sm:px-6 sm:py-2">
-              Learn more
-              <FontAwesomeIcon icon={faArrowRight} className="text-black text-1.5rem ml-2" />
-            </button>
-            <div className="comp-line-design mt-6">
-              <img
-                src={content[(currentIndex + index) % content.length].imge}
-                alt="line design"
-              />
-            </div>
+    <div className="w-full md:w-1/2 flex flex-col justify-center items-center gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
+  <div className="w-full flex justify-center">
+    {[0, 1, 2, 3].map((index) => (
+      (currentIndex === index) && (
+        <div className="comp-c bg-[#d9d3d3] relative rounded-[100px] flex flex-col items-center h-5/6 mt-auto justify-center px-4 py-12 w-3/4 xl:w-1/2" key={index}>
+          <img src={content[index].imgSrc} alt="" className="w-1/2" />
+          <p className="w-fit h-fit font-poppins text-base sm:text-lg md:text-xl lg:text-2xl text-center mt-4">
+            {content[index].pContent}
+          </p>
+          <button className="rounded-full bg-white flex items-center justify-center text-black text-lg gap-2 mt-4 px-6 py-2 sm:py-5">
+            Learn more <FontAwesomeIcon icon={faArrowRight} className="text-black text-1.5rem ml-2" />
+          </button>
+          <div className="mt-6">
+            <img src={content[index].imge} alt="line design" />
           </div>
-        ))}
-      </div>
-    </div>
-
+        </div>
+      )
+    ))}
   </div>
 </div>
 
-    
 
+  </div>
+</div>
 
       {/*page3*/}
       <div className="page3-container">
@@ -626,32 +658,32 @@ const BorderElements = section.querySelectorAll(".animationLogo");
           </div>
         </div>
 
-        <div className="mt-5 ml-4 lg:mr-20 lg:ml-80 xl:ml-auto page3-right lg:w-[45%]">
+        <div className="mt-5 ml-4  lg:ml-80 xl:ml-auto page3-right lg:w-[45%]">
   <button className="aboutus bg-white border border-black flex items-center mt-12 mb-7 font-poppins font-medium text-black text-base lg:text-lg px-4 py-2 rounded-full gap-2 hover:bg-orange-400 hover:text-white hover:shadow-lg transition duration-500 ease-in-out">
    <Link to="/who">About Us</Link> 
   </button>
   <div className="stable-des mt-5 font-poppins text-base lg:text-lg pr-4 lg:pr-7 text-[#012033] mb-5 max-w-full lg:max-w-2xl leading-normal lg:leading-9">
     Coltfox is not your typical digital marketing agency. We’re a strategic marketing firm that partners with clients to move their business forward. We’re bold. We’re curious. We’re transparent.
   </div>
-  <div className="movable-des pr-4 lg:pr-7 inline-flex flex-col font-poppins text-[#012033] leading-normal lg:leading-9 text-base lg:text-lg font-normal max-w-full lg:max-w-2xl text-left pb-2.5">
-    <div ref={movableRef} className="movable h-auto lg:h-31.25 font-poppins text-base lg:text-lg text-[#012033] pr-4 lg:pr-10 mb-3.75 max-w-full lg:max-w-2xl">
+  <div className="movable-des pr-4 lg:pr-7 inline-flex flex-col font-poppins text-[#012033] leading-normal text-base lg:text-lg font-normal max-w-full lg:max-w-2xl text-left pb-2.5">
+    <div ref={movableRef} className="movable h-auto  font-poppins leading-normal text-base lg:text-lg text-[#012033] pr-4 lg:pr-10 mb-3.75 max-w-full lg:max-w-2xl">
       {contents[contentIndex]}
     </div>
   </div>
-  <div className="flex justify-center pt-8 mr-8 lg:mx-auto">
+  <div className="flex justify-center pt-8 max-w-full lg:max-w-2xl">
     <img src={image[contentIndex]} alt="Line Design" />
   </div>
-  <button className="findmore-btn lg:mx-auto">
+  <button className="findmore-btn relative ">
             Find out more
             <img src="./arr-b.png" className="page3-arr" alt="Arrow" />
-          </button>
+  </button>
 </div>
 
       </div>
 
       {/*page4*/}
-      <div className="page4-container">
-        <div className="page4-left lg:ml-10">
+      <div className="page4-container flex flex-col lg:flex-row px-8">
+        <div className="page4-left lg:ml-10 2xl:w-full">
           <button className="whatwedo-btn"><Link to="/we-do">What We Do</Link></button>
           <div className="page4-title">Our Services</div>
           <div className="page4-des lg:w-full">
@@ -662,44 +694,52 @@ const BorderElements = section.querySelectorAll(".animationLogo");
           <content5>
             <div
               className="perf flex flex-row justify-between"
-              onClick={() => handleServiceClick("Performance Marketing")}
+              onMouseEnter={() => handleServiceHover("Performance Marketing")}
             >
               <div className="srno ml-2 lg:ml-0 w-20 sm:w-20">01</div>
               <div className="innertitle ml-2 sm:ml-10">Performance Marketing</div>
+              <Link to="/performance-marketing">
               <FontAwesomeIcon className="page4-arr sm:pl-6 pl-0" icon={faArrowRight} />
+              </Link>
             </div>
           </content5>
           <div className="page4-line" />
           <content6>
             <div
               className="perf flex flex-row justify-evenly"
-              onClick={() => handleServiceClick("Omni-channel Marketing")}
+              onMouseEnter={() => handleServiceHover("Omni-channel Marketing")}
             >
               <div className="srno w-20 sm:w-20">02</div>
               <div className="innertitle ml-auto pl-4 sm:pl-0 sm:ml-10">Omni - channel Marketing</div>
+              <Link to="omni-channel-marketing">
               <FontAwesomeIcon className="page4-arr sm:pl-6 pl-0" icon={faArrowRight} />
+              </Link>
             </div>
           </content6>
           <div className="page4-line" />
           <content7>
             <div
               className="perf flex flex-row justify-between"
-              onClick={() => handleServiceClick("Lead Generation")}
+              onMouseEnter={() => handleServiceHover("Lead Generation")}
             >
               <div className="srno ml-0 lg:ml-0 w-20 sm:w-20">03</div>
               <div className="innertitle pl-2 sm:pl-0 ml-auto sm:ml-10">Lead Generation</div>
+              <Link to="lead-generation">
               <FontAwesomeIcon className="page4-arr sm:pl-6 pl-0" icon={faArrowRight} />
+              </Link>
             </div>
           </content7>
           <div className="page4-line" />
           <content8>
             <div
               className="perf flex flex-row justify-between"
-              onClick={() => handleServiceClick("Content Marketing")}
+              onMouseEnter={() => handleServiceHover("Content Marketing")}
             >
               <div className="srno  w-20 sm:w-20">04</div>
               <div className="innertitle ml-4 pl-2 sm:pl-0 sm:ml-10">Content Marketing</div>
+              <Link to="content-marketing">
               <FontAwesomeIcon className="pl-0 sm:pl-6 page4-arr" icon={faArrowRight} />
+              </Link>
             </div>
           </content8>
           <div className="page4-line" />
@@ -716,16 +756,14 @@ const BorderElements = section.querySelectorAll(".animationLogo");
             />
           </button>
         </div>
-        <div className="page4-right mt-4 lg:mt-24">
-          <div className="changing-desof">
-            <div className="innertitl flex text-xl mb- lg:gap-4 ">
-            
+        <div className="page4-right mt-4 lg:mt-24 lg:mr-16 h-full">
+          <div className="changing-desof w-fit 2xl:mx-auto 2xl:w-1/2">
+            <div className="innertitl flex ">   
               {selectedService}
-              <Link to={`/${selectedService.toLowerCase().replace(/ /g, '-')}`}>
-              <img src="./arr-w-learn.png" alt="Learn more" className="w-full p-0 h-[100%]" /></Link>
+              <img src="./arr-w-learn.png" alt="Learn more" className="w-[10%] h-[10%] mt-4" />
             </div>
             {selectedService === "Performance Marketing" && (
-              <div className="titldes mt-4">
+              <div className="titldes mt-4 ">
                 ROIs are at the heart of performance marketing, as every action
                 can be tracked and measured against key performance indicators
                 (KPIs). Whether it be the number of clicks, page views or sales,
@@ -765,7 +803,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
       {/*page5*/}
       <div className="page5-container px-4 lg:px-20 flex flex-col py-16 lg:py-24 overflow-hidden">
         <Link to="/fox-impact">
-        <button className="seeall-btn mt-[-42px] mb-2.5 ml-auto flex">
+        <button className="seeall-btn mt-[-42px] mb-2.5 ml-auto">
           Case Studies <img src="./arr-w-learn.png" />
         </button>
         </Link>
@@ -920,7 +958,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
         <div className="page6-title" ref={containerRef3}>
           Process & Approach
         </div>
-        <div className="page6-cont mt-10 mx-auto flex flex-col items-center justify-around p-1 md:p-4 mb-8 lg:mb-24 overflow-hidden lg:flex-row">
+        <div className="page6-cont mt-10 mx-auto flex flex-col items-center justify-around p-1 md:p-4 mb-0 lg:mb-12 overflow-hidden lg:flex-row">
           <div className="protitle mx-2 lg:ml-10 flex items-center justify-center gap-0 lg:gap-7 text-xs md:text-xl lg:text-[54px]">
             1. <div className="innert">Requirements</div>
           </div>
@@ -931,7 +969,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
             importantly, what you want to achieve.
           </div>
         </div>
-        <div className="page6-cont mt-10 mx-auto flex flex-col items-center justify-around p-1 md:p-4 mb-8 lg:mb-24 overflow-hidden lg:flex-row">
+        <div className="page6-cont mt-10 mx-auto flex flex-col items-center justify-around p-1 md:p-4 mb-0 lg:mb-12 overflow-hidden lg:flex-row">
           <div className="protitle mx-2 lg:ml-10 flex items-center justify-center gap-0 lg:gap-7 text-xs md:text-xl lg:text-[54px]">
             2. <div className="innert">Strategy</div>
           </div>
@@ -942,7 +980,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
             idea is a bad idea; really anything goes!
           </div>
         </div>
-        <div className="page6-cont mt-10 mx-auto flex flex-col items-center justify-around p-1 md:p-4 mb-8 lg:mb-24 overflow-hidden lg:flex-row">
+        <div className="page6-cont mt-10 mx-auto flex flex-col items-center justify-around p-1 md:p-4 mb-0 lg:mb-12 overflow-hidden lg:flex-row">
           <div className="protitle mx-2 lg:ml-10 flex items-center justify-center gap-0 lg:gap-7 text-xs md:text-xl lg:text-[54px]">
             3. <div className="innert">Launch</div>
           </div>
@@ -953,7 +991,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
             ensure the results match your objectives.
           </div>
         </div>
-        <div className="page6-cont mt-10 mx-auto flex flex-col items-center justify-around p-1 md:p-4 mb-8 lg:mb-24 overflow-hidden lg:flex-row">
+        <div className="page6-cont mt-10 mx-auto flex flex-col items-center justify-around p-1 md:p-4 mb-0 lg:mb-12 overflow-hidden lg:flex-row">
           <div className="protitle mx-2 lg:ml-10 flex items-center justify-center gap-0 lg:gap-7 text-xs md:text-xl lg:text-[54px]">
             4. <div className="innert">Enhance</div>
           </div>
@@ -989,29 +1027,29 @@ const BorderElements = section.querySelectorAll(".animationLogo");
     </div>
     <div className="flex flex-col mt-10 lg:w-full text-left relative gap-12">
         {/* Section 1 */}
-        <div className="section1 lg:w-4/5" ref={(ref) => (sectionRefs.current[0] = ref)}>
+        <div className="section1 lg:w-4/5 relative" ref={(ref) => (sectionRefs.current[0] = ref)}>
             <div className="section-main text-white font-poppins font-bold text-3xl md:text-4xl lg:text-5xl">
                 FRANCHISES
             </div>
-            <div className="page7-divider w-3/5 h-px bg-gray-300 mt-4"></div>
-            <div className="sec-logo">
-                <img src="./sec1-logo.png" alt="Franchises" className="animationLogo w-60 h-60 md:w-80 md:h-80 absolute right-48 top-[40%]"/>
-            </div>
-            <div className="sec-desc1 lg:w-1/2 mt-2 text-white font-poppins font-normal text-base lg:text-lg leading-relaxed">
-                Not only do we increase B2B leads for franchisors, we also help home-town franchisees generate new customers and increase customer loyalty.
-            </div>
+            <div className="page7-divider page7-liner1 w-full overflow-hidden h-px bg-gray-300 mt-4"></div>
+    <div className="sec-logo">
+        <img src="./sec1-logo.png" alt="Franchises" className="sec1-logo-image animationLogo w-60 h-60 md:w-80 md:h-80 absolute right-[0%] top-[40%]"/>
+    </div>
+    <div className="sec-desc1 lg:w-1/2 mt-2 text-white font-poppins font-normal text-base lg:text-lg leading-relaxed">
+        Not only do we increase B2B leads for franchisors, we also help home-town franchisees generate new customers and increase customer loyalty.
+    </div>
             <button className="learn-m w-fit mt-5 h-10 border border-white rounded-full px-5 flex items-center justify-between gap-5">
                 Learn More <img src="./arr-w-learn.png" alt="Learn More" className="w-10" />
             </button>
         </div>
         {/* Section 2 */}
-        <div className="section2 lg:pl-[40px]" ref={(ref) => (sectionRefs.current[1] = ref)}>
+        <div className="section2 lg:w-4/5 relative" ref={(ref) => (sectionRefs.current[1] = ref)}>
             <div className="section-main text-white font-poppins font-bold text-3xl md:text-4xl lg:text-5xl">
             NON-PROFITS
             </div>
-            <div className="page7-divider w-3/5 h-px bg-gray-300 mt-2"></div>
+            <div className="page7-divider page7-liner2 w-full overflow-hidden h-px bg-gray-300 mt-4"></div>
             <div className="sec-logo">
-                <img src="./sec2-logo.png" alt="Franchises" className="animationLogo w-60 h-60 md:w-80 md:h-80 absolute right-44 top-[40%]"/>
+                <img src="./sec2-logo.png" alt="Franchises" className="sec2-logo-image animationLogo w-60 h-60 md:w-80 md:h-80 absolute right-[0%] top-[40%]"/>
             </div>
             <div className="sec-desc2 lg:w-1/2 mt-2 text-white font-poppins font-normal text-base lg:text-lg leading-relaxed">
                 Not only do we increase B2B leads for franchisors, we also help home-town franchisees generate new customers and increase customer loyalty.
@@ -1021,13 +1059,13 @@ const BorderElements = section.querySelectorAll(".animationLogo");
             </button>
         </div>
         {/* Section 3 */}
-        <div className="section3 lg:w-4/5" ref={(ref) => (sectionRefs.current[2] = ref)}>
+        <div className="section3 lg:w-4/5 relative" ref={(ref) => (sectionRefs.current[2] = ref)}>
             <div className="section-main text-white font-poppins font-bold text-3xl md:text-4xl lg:text-5xl">
                 E-COMMERCE
             </div>
-            <div className="page7-divider w-3/5 h-px bg-gray-300 mt-2"></div>
+            <div className="page7-divider page7-liner3 w-full overflow-hidden h-px bg-gray-300 mt-4"></div>
             <div className="sec-logo">
-                <img src="./sec3-logo.png" alt="Franchises" className=" animationLogo w-60 h-60 md:w-80 md:h-80 absolute right-48 top-[40%]"/>
+                <img src="./sec3-logo.png" alt="Franchises" className="sec3-logo-image animationLogo w-60 h-60 md:w-80 md:h-80 absolute right-[0%] top-[40%]"/>
             </div>
             <div className="sec-desc3 lg:w-1/2 mt-2 text-white font-poppins font-normal text-base lg:text-lg leading-relaxed">
                 Not only do we increase B2B leads for franchisors, we also help home-town franchisees generate new customers and increase customer loyalty.
@@ -1217,21 +1255,22 @@ const BorderElements = section.querySelectorAll(".animationLogo");
 
 
       {/* page10 */}
-      <div className="page10-container">
+      <div className="page10-container w-full px-8">
         <button className="whatweread-btn">What We Read</button>
         <div className="page10-title">Our Blogs</div>
-        <div className="page10-subtitle">
-          Be inspired and informed.{" "}
-          <button className="ournews-btn">
+        <div className=" flex flex flex-col lg:flex-row justify-between">
+          <div className="page10-subtitle">Be inspired and informed.{" "}</div>
+          <button className="ournews-btn w-fit px-6 lg:mr-12">
             Our News
             <img src="./arr-b.png" />{" "}
           </button>
         </div>
         <div className="page10-line" />
 
-        <div className="page10-cont flex-col lg:flex-row lg:gap-8 lg:mx-8">
-          <div className="page10-blog1 lg:w-1/2">
-            <img src="./firstblog.png" className="blogimg" />
+        <div className="page10-cont flex-col lg:flex-row lg:gap-8 lg:mx-8 justify-between lg:gap-8 lg:px-6">
+          <div className="page10-blog1 flex flex-col lg:w-1/2 pr-0">
+          <div className="w-full flex flex-col items-center">
+            <img src="./firstblog.png" className="blogimg h-fit" />
             <div className="expand-blog">
               <div className="expand-content">
                 <img
@@ -1242,7 +1281,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
                 <img className="blog-arr" src="./page10-arrw.png" alt="" />
               </div>
             </div>
-            <div className="blog-des flex justify-between pl-0">
+            <div className="blog-des flex justify-between pl-0 2xl:w-[670px]">
               <div className="para sm:text-[20px] lg:text-[30px] w-5/6">
                 First - party data in marketing - what you need to know ?
               </div>
@@ -1252,10 +1291,13 @@ const BorderElements = section.querySelectorAll(".animationLogo");
               </button>
               </Link>
             </div>
-            <div className="blog-btn">MARKETING AND DATA</div>
+            
+            </div>
+            <div className="blog-btn mt-0 2xl:ml-[20%]">MARKETING AND DATA</div>
           </div>
-          <div className="page10-blog2 lg:w-1/2">
-            <img src="./secondblog.png" className="blogimg" />
+          <div className="page10-blog2 flex flex-col lg:w-1/2 pr-0">
+          <div className="w-full flex flex-col items-center">
+            <img src="./secondblog.png" className="blogimg h-fit" />
             <div className="expand-blog">
               <div className="expand-content">
                 <img
@@ -1266,17 +1308,19 @@ const BorderElements = section.querySelectorAll(".animationLogo");
                 <img className="blog-arr" src="./page10-arrw.png" alt="" />
               </div>
             </div>
-            <div className="blog-des flex justify-between pl-0">
+            <div className="blog-des flex justify-between pl-0 2xl:w-[670px]">
               <div className="para sm:text-[20px] lg:text-[30px] w-5/6">
-              The power of performance creative in modern marketing
+                Social Media Marketing Tips For the Year - 2024 !
               </div>
               <Link to="/blog-2">
-              <button className="gotoblog-btn ml-0  mt-0">
+              <button className="gotoblog-btn ml-0 mt-0">
                 <img src="./crossarrimg.png" />
               </button>
               </Link>
             </div>
-            <div className="blog-btn">SOCIAL MEDIA MARKETING</div>
+            
+            </div>
+            <div className="blog-btn mt-0 2xl:ml-[20%]">SOCIAL MEDIA MARKETING</div>
           </div>
         </div>
       </div>

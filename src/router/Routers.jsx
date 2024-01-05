@@ -18,14 +18,15 @@ import Permarketing from "../pages/performance-marketing.jsx";
 import Hudbilservices from '../pages/hudbil-services.jsx';
 import Kalacodeservices from '../pages/kalacode-services.jsx';
 import Ourblogs from '../pages/our-blogs.jsx';
-import Whatwedomenu from '../pages/whatwedo-menu.jsx';
 import Privacypolicy from '../pages/privacy-policy.jsx';
 import Blog1 from '../pages/blog-inside1.jsx';
 import Faq from '../pages/faq.jsx';
-import Whowearemenu from '../pages/whoweare-menu.jsx';
 import Cookiepolicy from '../pages/cookie-policy.jsx';
 import Termsofservice from '../pages/terms-of-service.jsx';
 import Accessibility from '../pages/accessbility.jsx';
+import Omnimarketing from '../pages/omnichannel-marketing.jsx';
+import Leadgen from '../pages/lead-generation.jsx';
+import Contentmarketing from '../pages/content-marketing.jsx';
 
 const Routers = () => {
   return (
@@ -43,12 +44,13 @@ const Routers = () => {
       <Route path='/acma' element={<Acma/>}/>
       <Route path='/fox-impact' element={<Foximpact/>}/>
       <Route path='/performance-marketing' element={<Permarketing/>}/>
+      <Route path='/omni-channel-marketing' element={<Omnimarketing/>}/>
+      <Route path='/lead-generation' element={<Leadgen/>}/>
+      <Route path='/content-marketing' element={<Contentmarketing/>}/>
       <Route path='/hudbil-services' element={<Hudbilservices/>}/>
       <Route path='/kalacode-services' element={<Kalacodeservices/>}/>
       <Route path='/our-blogs' element={<Ourblogs/>}/>
       <Route path='/blog-1' element={<Blog1/>}/>
-      <Route path='/whatwedo-menu' element={<Whatwedomenu/>}/>
-      <Route path='/whoweare-menu' element={<Whowearemenu/>}/>
       <Route path='/privacy-policy' element={<Privacypolicy/>}/>
       <Route path='/cookie-policy' element={<Cookiepolicy/>}/>
       <Route path='/terms-of-service' element={<Termsofservice/>}/>

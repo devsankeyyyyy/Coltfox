@@ -309,7 +309,19 @@ button:hover::before {
 } */
 
 /*page2*/
-.page2-container {
+.comp-c::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px; /* Adjust height as needed */
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: inset 0 10px 15px -10px rgba(0, 0, 0, 0.4);
+}
+
+/* .page2-container {
   background-color: #f2f2f2;
   height: auto;
   display: flex;
@@ -464,7 +476,7 @@ button:hover::before {
 
 .comp-c:nth-child(3) {
   margin-top: 150px;
-}
+} */
 /* @media screen and (max-width: 480px) {
   .page2-container {
     padding: 40px 15px 10px 15px;
@@ -589,7 +601,7 @@ button:hover::before {
 
 .section-heading {
   font-family: "Poppins", sans-serif;
-  font-size: 60px;
+  font-size: 80px;
   width: 5100px;
   background-color: #fcab64;
   color: #1f1f21;
@@ -1190,7 +1202,7 @@ button:hover::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
   height: 100%;
   width: 0;
   border-radius: 50px;
@@ -1844,6 +1856,53 @@ button:hover::before {
   line-height: 70px;
   text-align: left;
 }
+.page7-liner1 {
+  width: calc(100% - var(--logo-width));
+}
+
+@media screen and (min-width: 768px) {
+  .sec1-logo-image {
+    width: 320px; /* Adjust based on md:w-80 */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sec1-logo-image {
+    width: 240px; /* Adjust based on w-60 */
+  }
+}
+.page7-liner2 {
+  width: calc(100% - var(--logo-width));
+}
+
+@media screen and (min-width: 768px) {
+  .sec2-logo-image {
+    width: 320px; /* Adjust based on md:w-80 */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sec2-logo-image {
+    width: 240px; /* Adjust based on w-60 */
+  }
+}
+
+.page7-liner3 {
+  width: calc(100% - var(--logo-width));
+}
+
+@media screen and (min-width: 768px) {
+  .sec3-logo-image {
+    width: 320px; /* Adjust based on md:w-80 */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sec3-logo-image {
+    width: 240px; /* Adjust based on w-60 */
+  }
+}
+
 .sec-logo img {
   position: absolute;
   width: 250px;

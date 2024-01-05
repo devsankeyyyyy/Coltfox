@@ -44,7 +44,7 @@ export default function Cursor() {
   };
   useEffect(() => {
     const buttons = document.querySelectorAll(
-      '.dropdown-menu, .dropdown-menu1, .dropdown-menu2, .dropdown-menu3, .dropdown-menu4, .dropdown-menu5, .dropdown-menu6, button, .content, .content2, .content3, .content4, .content5, .content6, .content7, .content8, a, [role="button"], [type="button"]'
+      '.whoweare-menu, .whatwedo-menu, .dropdown-menu, .dropdown-menu1, .dropdown-menu2, .dropdown-menu3, .dropdown-menu4, .dropdown-menu5, .dropdown-menu6, button, .content, .content2, .content3, .content4, .content5, .content6, .content7, .content8, a, [role="button"], [type="button"]'
     );
 
     const page6Conts = document.querySelectorAll('.blogimg,.page5-cont,.page6-cont');
