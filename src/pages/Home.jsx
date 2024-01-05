@@ -606,16 +606,16 @@ const BorderElements = section.querySelectorAll(".animationLogo");
 
       <div className="bg-[#f2f2f2] flex flex-col overflow-hidden">
   <NavbarAndFullscreenMenu />
-  <div className="flex flex-col pb-2 px-10 pt-8 md:px-12 xl:px-44 lg:flex-row justify-between">
+  <div className="flex flex-col pb-2 px-6 pt-8 md:px-12 xl:px-44 lg:flex-row justify-between">
   <div>
-    <h1 className="text-[#df2323] font-semibold text-4xl md:text-[3rem] lg:text-[4.5rem] mb-6 sm:mb-20 leading-tight">
+    <h1 className="text-[#df2323] font-semibold text-3xl md:text-[3rem] lg:text-[4.5rem] mb-6 sm:mb-20 leading-tight">
       We help
     </h1>
     <p className="animation mb-6 sm:mb-20">
-        <span className="head2-anm bg-[url('/yellowpaper.jpeg')] text-3xl md:text-[3rem] lg:text-[4.5rem] bg-cover rounded-full text-[#1f1f21] font-semibold leading-tight px-4 py-2 sm:px-8 sm:py-4"></span>
+        <span className="head2-anm bg-[url('/yellowpaper.jpeg')] text-2xl md:text-[3rem] lg:text-[4.5rem] bg-cover rounded-full text-[#1f1f21] font-semibold leading-tight px-4 py-2 sm:px-8 sm:py-4"></span>
         <span className="typing-cursor"></span>
     </p>
-    <h1 className="text-[#df2323] font-semibold text-4xl md:text-[3rem] lg:text-[4.5rem] mb-6 sm:mb-20 leading-tight">
+    <h1 className="text-[#df2323] font-semibold text-3xl md:text-[3rem] lg:text-[4.5rem] mb-6 sm:mb-20 leading-tight">
       by marketing
     </h1>
   </div>
@@ -634,7 +634,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
       <button className="w-1/2 sm:w-1/3 h-12 rounded-full bg-white flex items-center justify-center text-black text-lg px-4 gap-2 shadow-md hover:bg-[#fcab64]">
         Who We Are
       </button>
-      <h1 ref={titleRef} className="font-poppins font-bold text-[#df2323] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl my-6 md:my-8 lg:my-10 xl:my-12">
+      <h1 ref={titleRef} className="font-poppins font-bold text-[#df2323] text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl my-6 md:my-8 lg:my-10 xl:my-12">
         Our Brands
       </h1>
       <p className="font-poppins text-[#1F1F21] text-base sm:text-lg md:text-xl leading-normal sm:leading-relaxed md:leading-loose">
@@ -668,8 +668,8 @@ const BorderElements = section.querySelectorAll(".animationLogo");
 </div>
 
       {/*page3*/}
-      <div className="page3-container">
-        <div className="pt-16 h-auto">
+      <div className="page3-container pt-0 md:pt-12">
+        <div className="pt-8 md:pt-16 h-auto">
           <div className="bg-[#fcab64]">
             <div className="section-heading-content section-heading bg-[#fcab64]">
               Our passion lies in working closely with our clients to develop
@@ -678,7 +678,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
           </div>
         </div>
 
-        <div className="mt-5 ml-4  lg:ml-80 xl:ml-auto page3-right lg:w-[45%]">
+        <div className="mt-0 md:mt-5 pl-0 lg:ml-80 xl:ml-auto page3-right lg:w-[45%]">
   <button className="aboutus bg-white border border-black flex items-center mt-12 mb-7 font-poppins font-medium text-black text-base lg:text-lg px-4 py-2 rounded-full gap-2 hover:bg-orange-400 hover:text-white hover:shadow-lg transition duration-500 ease-in-out">
    <Link to="/who">About Us</Link> 
   </button>
@@ -1200,7 +1200,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
             <div className="page9-title">Its all about our clients. </div>
             <div className="page9-subtitle text-[28px] lg:text-[40px]">(and what they say!)</div>
           </div>
-          <div className="page9-des w-1/2 pl-0 lg:w-2/3 gap-30">
+          <div className="page9-des mb-0 w-1/2 pl-0 lg:w-2/3 gap-30">
             <Slider {...settings}>
               <div className="mr-auto lg:gap-30 flex flex-col w-1/2">
                 <div className="comp-name pl-0 lg:pl-[50px]">Roatan Real Estate</div>
@@ -1279,7 +1279,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
         <button className="whatweread-btn">What We Read</button>
         <div className="page10-title">Our Blogs</div>
         <div className=" flex flex flex-col lg:flex-row justify-between">
-          <div className="page10-subtitle">Be inspired and informed.{" "}</div>
+          <div className="page10-subtitle ">Be inspired and informed.{" "}</div>
           <button className="ournews-btn w-fit px-6 lg:mr-12">
             Our News
             <img src="./arr-b.png" />{" "}
@@ -1288,7 +1288,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
         <div className="page10-line" />
 
         <div className="flex flex-col lg:flex-row py-8 px-2 lg:gap-12">
-        <div className="blog-1 flex flex-col items-center w-full lg:w-1/2 relative">
+        <div className="blog-1 flex flex-col w-full lg:w-1/2 relative">
         <div className="w-full flex flex-col items-center">
         <img src="./firstblog.png" className="blogimg w-full h-fit xl:h-[480px]" />
         <div className="expand-blog">
@@ -1304,7 +1304,6 @@ const BorderElements = section.querySelectorAll(".animationLogo");
         <div className="details flex gap-6  py-4 w-full justify-between mt-6">
         <div className="link flex flex-col justify-items">
           <div className="leading-tight font-medium text-2xl md:text-3xl 2xl:text-4xl text-[#1F1F21]">First - party data in marketing - what you need to know ?</div>
-          <div className="blog-btn mt-12">MARKETING AND DATA</div>
         </div>
         <Link to="/blog-1" className="">
           <button className="gotoblog-btn ml-0 mt-0 h-[60px] w-[60px]">
@@ -1312,10 +1311,12 @@ const BorderElements = section.querySelectorAll(".animationLogo");
           </button>
         </Link>
         </div>
+        
         </div>
+        <div className="blog-btn mt-6 ml-0 w-fit">MARKETING AND DATA</div>
         </div>
 
-        <div className="blog-2 flex flex-col items-center w-full lg:w-1/2 relative">
+        <div className="blog-2 flex flex-col w-full lg:w-1/2 relative">
         <div className="w-full flex flex-col items-center">
         <img src="./secondblog.png" className="blogimg w-full h-fit xl:h-[480px]" />
         <div className="expand-blog">
@@ -1331,7 +1332,6 @@ const BorderElements = section.querySelectorAll(".animationLogo");
         <div className="details flex gap-6  py-4 w-full justify-between mt-6">
         <div className="link flex flex-col justify-items">
           <div className="leading-tight font-medium text-2xl md:text-3xl 2xl:text-4xl text-[#1F1F21]">Social Media Marketing Tips For the Year - 2024 !</div>
-          <div className="blog-btn mt-12">SOCIAL MEDIA MARKETING</div>
         </div>
         <Link to="/blog-2" className="">
           <button className="gotoblog-btn ml-0 mt-0 h-[60px] w-[60px]">
@@ -1340,6 +1340,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
         </Link>
         </div>
         </div>
+        <div className="blog-btn ml-0 mt-6 w-fit">SOCIAL MEDIA MARKETING</div>
         </div>
         </div>
 

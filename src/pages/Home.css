@@ -2428,6 +2428,7 @@ button:hover::before {
   .page9-des {
     width: 370px;
     padding-left: 10px;
+    min-height: 530px;
   }
 
   .page9-subtitle {
@@ -3149,7 +3150,7 @@ button:hover::before {
   }
   .page10-subtitle {
     margin-left: 0px;
-    font-size: 28px;
+    font-size: 24px;
     display: block;
   }
 
@@ -3204,8 +3205,8 @@ button:hover::before {
   }
   .expand-blog {
     position: absolute;
-    top: 135px;
-    left: 190px;
+    top: 20%;
+    left: 50%;
     transform: translate(-50%, -50%);
   }
 
