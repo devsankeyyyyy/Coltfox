@@ -1302,7 +1302,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
               </div>
             </div>
             <div className="blog-des flex justify-between pl-0 2xl:w-[670px]">
-              <div className="para sm:text-[20px] lg:text-[30px] w-5/6">
+              <div className="para sm:text-[20px] lg:text-[30px] w-4/5 2xl:w-5/6">
                 First - party data in marketing - what you need to know ?
               </div>
               <Link to="/blog-1">
@@ -1329,7 +1329,7 @@ const BorderElements = section.querySelectorAll(".animationLogo");
               </div>
             </div>
             <div className="blog-des flex justify-between pl-0 2xl:w-[670px]">
-              <div className="para sm:text-[20px] lg:text-[30px] w-5/6">
+              <div className="para sm:text-[20px] lg:text-[30px] w-4/5 2xl:w-5/6">
                 Social Media Marketing Tips For the Year - 2024 !
               </div>
               <Link to="/blog-2">
