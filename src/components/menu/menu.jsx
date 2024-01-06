@@ -1102,10 +1102,11 @@ const NavbarAndFullscreenMenu = () => {
 
         <div
           id="yellowDiv"
-          className="vertical-div py-16 hidden gap-2 sm:flex flex-col justify-around items-center yellow"
+          className="vertical-div pt-12 2xl:pt-6 hidden gap-2 sm:flex flex-col justify-between xl:justify-evenly
+           items-center yellow"
         >
           <h1 className="text-5xl font-black  text-[#b18060]">Our brands</h1>
-          <div>
+          <div className="h-fit">
             <div className="overlay absolute inset-0 w-full h-full z-10">
               <img
                 className="w-full h-full object-cover opacity-40"
@@ -1113,7 +1114,7 @@ const NavbarAndFullscreenMenu = () => {
                 alt="Overlay Image"
               />
             </div>
-            <div className="logo flex flex-col justify-center items-center text-center relative w-32">
+            <div className="logo flex flex-col justify-center items-center text-center relative h-1/5 xl:h-fit w-32">
               <a className="cursor-pointer">
                 <img
                   className="w-full h-auto"
@@ -1123,7 +1124,7 @@ const NavbarAndFullscreenMenu = () => {
               </a>
               <div className=" w-2/3 mx-auto h-[2px] bg-[#B18060]"></div>
             </div>
-            <div className="logo  flex flex-col justify-center items-center text-center  relative w-36">
+            <div className="logo  flex flex-col justify-center items-center text-center relative h-1/5 xl:h-fit w-36">
               <a className="cursor-pointer">
                 <img
                   className="w-full h-auto"
@@ -1133,7 +1134,7 @@ const NavbarAndFullscreenMenu = () => {
               </a>
               <div className=" w-2/3 mx-auto h-[2px] bg-[#B18060]"></div>
             </div>
-            <div className="logo  flex flex-col justify-center items-center text-center relative w-32">
+            <div className="logo  flex flex-col justify-center items-center text-center relative h-1/5 xl:h-fit w-32">
               <a className="cursor-pointer">
                 <img
                   className="w-full h-auto"
@@ -1143,7 +1144,7 @@ const NavbarAndFullscreenMenu = () => {
               </a>
               <div className=" w-2/3 mx-auto h-[2px] bg-[#B18060]"></div>
             </div>
-            <div className="logo  flex flex-col justify-center items-center text-center  relative w-32">
+            <div className="logo  flex flex-col justify-center items-center text-center  relative h-1/5 xl:h-fit w-32">
               <a className="cursor-pointer">
                 <img
                   className="w-full h-auto"

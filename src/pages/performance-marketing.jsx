@@ -33,7 +33,10 @@ const Permarketing = () => {
 
             <div className="flex justify-center items-center pt-20 pb-5 w-full md:w-3/4 lg:w-1/2 mx-auto">
                 <div className='flex flex-col items-center justify-center'>
-                    <div className=" bg-[#FCAB64] w-max mb-10 px-5 rounded-full py-2 text-white text-xl font-normal">PERFORMANCE MARKETING</div>
+                <div className="inner-shadow-top bg-[#FCAB64] w-max mb-10 px-5 rounded-full py-2 text-white text-xl font-normal relative">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-b from-black via-black to-transparent opacity-5"></div>
+                    PERFORMANCE MARKETING
+                </div>
                     <div className="text-center px-5 pb-10 text-[#012033] text-4xl sm:text-[4rem] font-bold leading-tight">
                         Creative solutions for measurable results.
                     </div>
@@ -91,7 +94,7 @@ const Permarketing = () => {
                         </svg>
                     </div>
                 </div>
-                <div className="mt-12 sm:mt-32 pb-10 flex items-center justify-center text-[#012033] text-left gap-2.5  text-lg font-light leading-5">
+                <div className="mt-12 sm:mt-32 2xl:mt-44 pb-10 flex items-center justify-center text-[#012033] text-left gap-2.5  text-lg font-light leading-5">
                     LEARN MORE
                     <svg width="25" height="34" viewBox="0 0 25 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_1425_7088)">
@@ -170,7 +173,7 @@ const Permarketing = () => {
                         )}
                         <div className="h-0.5 w-full bg-gray-800 mt-5" />
                         <div className="menu-3 pt-5 px-2 sm:px-5 flex items-center">
-                            <div className="text-3xl font-semibold leading-9 text-[#012033] w-4/5 sm:w-fit">
+                            <div className="text-3xl font-semibold leading-9 text-[#012033] w-5/6 sm:w-fit">
                                 SEM (Search Engine Marketing)
                             </div>
                             <svg
@@ -222,7 +225,7 @@ const Permarketing = () => {
                         )}
                         <div className="h-0.5 w-full bg-gray-800 mt-5" />
                         <div className="menu-5 pt-5 px-2 sm:px-5 flex items-center">
-                            <div className="text-3xl font-semibold leading-9 text-[#012033] w-3/5 sm:w-fit">
+                            <div className="text-3xl font-semibold leading-9 text-[#012033] w-4/5 sm:w-fit">
                                 Programmatic Media Buying
                             </div>
                             <svg

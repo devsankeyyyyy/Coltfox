@@ -24,7 +24,7 @@ const Leadgen = () => {
         <div className='bg-[#F2F2F2]'>
             <NavbarAndFullscreenMenu />
 
-            <div className="acma mt-10 px-3 pb-0 sm:pb-6 text-center sm:px-20 text-[#DF2323] text-5xl sm:text-[6rem] font-bold leading-tight">
+            <div className=" mt-10 px-3 pb-0 sm:pb-6 text-center sm:px-20 text-[#DF2323] text-5xl sm:text-[6rem] font-bold leading-tight">
                 <h1> Lead generation </h1>
                 <h1> FOX higher </h1>
                 <h1> conversions & </h1>
@@ -33,7 +33,10 @@ const Leadgen = () => {
 
             <div className="flex justify-center items-center pt-20 pb-5 w-full md:w-3/4 lg:w-4/5 mx-auto">
                 <div className='flex flex-col items-center justify-center'>
-                    <div className=" bg-[#FCAB64] w-max mb-10 px-5 rounded-full py-2 text-white text-xl font-normal">LEAD GENERATION</div>
+                <div className="inner-shadow-top bg-[#FCAB64] w-max mb-10 px-5 rounded-full py-2 text-white text-xl font-normal relative">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-b from-black via-black to-transparent opacity-5"></div>
+                    LEAD GENERATION
+                </div>
                     <div className=" text-center px-0 pb-10 text-[#012033] text-4xl sm:text-[4rem] font-bold leading-tight">
                         Connecting creativity <br /> and conversion
                     </div>
@@ -91,7 +94,7 @@ const Leadgen = () => {
                         </svg>
                     </div>
                 </div>
-                <div className="mt-12 sm:mt-32 pb-10 flex items-center justify-center text-[#012033] text-left gap-2.5  text-lg font-light leading-5">
+                <div className="mt-12 sm:mt-32 2xl:mt-44 pb-10 flex items-center justify-center text-[#012033] text-left gap-2.5  text-lg font-light leading-5">
                     LEARN MORE
                     <svg width="25" height="34" viewBox="0 0 25 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_1425_7088)">
@@ -222,7 +225,7 @@ const Leadgen = () => {
                         )}
                         <div className="h-0.5 w-full bg-gray-800 mt-5" />
                         <div className="menu-5 pt-5 px-2 sm:px-5 flex items-center">
-                            <div className="text-3xl font-semibold leading-9 text-[#012033] w-3/5 sm:w-fit">
+                            <div className="text-3xl font-semibold leading-9 text-[#012033] w-4/5 sm:w-fit">
                                 Account Based Marketing ABM
                             </div>
                             <svg
